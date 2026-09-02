@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!--
+  AMURAI · PIEZA 10 · PEDIDO · pedido_AMURAI_v1.0
+  Estado: BORRADOR (paso 9, 2026-09-02) · nace de D-106 §5 (GATE C): página previa de pedido en amurai.es con las tres
+  casillas del bloque B (E33, D-104), la casilla OPCIONAL del Club (D-106 §14), base + IVA + total (D-053) y el aviso de quién
+  cobra (D-106 §2: la cuenta de Stripe de Nevada & Amurai, B1). El botón «Pagar» lleva al enlace de pago de Stripe del producto
+  o de la edición, con prefilled_email.
+  UNA plantilla, CUATRO variantes por parámetro ?producto=masterclass | directo | taller | tramo (+ &edicion=…).
+  URLs finales (E37 L9): /masterclass-de-precios/pedido/ · /masterclass-de-precios/en-directo/pedido/ ·
+  /taller-tu-sistema-de-precios/pedido/?edicion=… · [tramo]/pedido/ · todas noindex.
+  SIN INTEGRACIÓN (D-070): el enlace de pago de cada producto lo crea Antonio en Stripe (PRODUCTOS[].enlace, hoy '#') y el
+  registro de consentimientos (fecha, hora, texto) lo monta CMYK con el formulario de WordPress.
+  Copy de esta página: microcopy de arquitectura del asistente, declarado para que Antonio lo valide.
+  PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
+  PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Pedido · Amurai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:18px;--shadow:0 18px 50px rgba(25,25,25,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  header{border-bottom:1px solid var(--line);background:rgba(247,245,240,.86)}
+  header .bar{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+  header img{height:26px;display:block}
+  header a.back{font-size:.92rem;color:var(--muted);text-decoration:none;padding:12px 0;display:inline-block}
+  main{flex:1;padding:56px 24px}
+  .box{max-width:680px;margin:0 auto;width:100%}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(1.7rem,4.5vw,2.6rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:14px 0 18px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 28px;box-shadow:var(--shadow);margin-top:18px}
+  .card h2{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+  .card p{color:var(--ink-2);font-size:.98rem}
+  .card p+p{margin-top:8px}
+  .card .ed{font-weight:800;font-size:1.1rem;color:var(--ink)}
+  table.tot{width:100%;border-collapse:collapse;margin-top:6px;font-size:1rem}
+  table.tot td{padding:9px 0;border-bottom:1px dashed var(--line)}
+  table.tot td:last-child{text-align:right;font-weight:700;white-space:nowrap}
+  table.tot tr.t td{border:0;font-size:1.25rem;font-weight:900;padding-top:12px}
+  table.tot tr.t td:last-child{font-size:1.5rem}
+  .note{font-size:.86rem;color:var(--muted);margin-top:8px}
+  form{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px 28px;box-shadow:var(--shadow);margin-top:18px}
+  label.f{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  input[type=email]{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;margin-bottom:14px;font:inherit;background:#fff;color:var(--ink)}
+  .capa1{font-size:.8rem;color:var(--muted);line-height:1.5;border-top:1px dashed var(--line);padding-top:14px;margin:6px 0 12px}
+  .capa1 table{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:.78rem}
+  .capa1 th{text-align:left;font-weight:700;color:var(--ink);padding:3px 8px 3px 0;width:31%;vertical-align:top}
+  .capa1 td{padding:3px 0;vertical-align:top}
+  .capa1 a{color:var(--ink);font-weight:600}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-2);margin:10px 0}
+  .chk input{margin-top:4px;flex:none;width:16px;height:16px}
+  .chk .txt{flex:1}
+  .chk details{display:block}
+  .chk details:not([open])>.full{display:none}
+  .chk summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;margin-left:6px;list-style:none}
+  .chk summary::-webkit-details-marker{display:none}
+  .chk summary::after{content:" ▾"}
+  .chk details[open] summary::after{content:" ▴"}
+  .chk details[open] summary{display:block;margin:4px 0}
+  .full{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:8px;font-size:.78rem;color:var(--ink-2)}
+  .full p{margin:0 0 8px}
+  .club{background:var(--cream);border-radius:12px;padding:12px 14px;margin:14px 0}
+  .quien{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:.86rem;color:var(--ink-2);margin:14px 0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;width:100%;gap:.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:1.05rem;padding:16px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-family:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(240,195,26,.4)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+  .pend{background:#fff3c4;border:1px dashed #c9a400;border-radius:8px;padding:2px 8px;font-size:.85rem;font-weight:700;color:#5a4a00}
+  .nota{background:#f3f1ea;border-left:4px solid var(--ink);border-radius:0 12px 12px 0;padding:12px 16px;margin-top:28px;font-size:.85rem;color:var(--ink-2)}
+  footer{background:var(--ink);color:rgba(255,255,255,.68);padding:32px 24px;text-align:center;font-size:.95rem}
+  footer .tag{color:var(--gold);font-style:italic;margin:6px 0}
+  footer a{color:rgba(255,255,255,.68);text-decoration:none}
+  footer .legal-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;margin-top:10px;font-size:.85rem}
+  footer .legal-nav a{display:inline-block;padding:10px 4px;line-height:1.2}
+  footer a:hover{color:#fff}
+  [hidden]{display:none!important}
+
+/* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
+.capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
+.capa1 details.info{display:block;margin:0 0 2px}
+.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary::-webkit-details-marker{display:none}
+.capa1 details.info summary::after{content:" ▾"}
+.capa1 details.info[open] summary::after{content:" ▴"}
+.capa1 details.info table{margin:6px 0 10px}
+.capa1 details.info:not([open])>table{display:none}
+.capa1 .chk{margin:6px 0}
+
+/* ===== PASO 9c (GATE D, JR): sistema de acentos de color, sin tocar el copy ===== */
+.hero .eyebrow.gold,.box>.eyebrow{display:inline-block;background:var(--gold);color:var(--ink);padding:7px 12px;border-radius:999px;font-weight:700;letter-spacing:.18em}
+section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;height:3px;background:var(--gold);margin-right:10px;vertical-align:middle;border-radius:2px}
+.hl{background:linear-gradient(transparent 62%,var(--gold) 62%);padding:0 .08em}
+.s-ink .hl{color:var(--ink)}
+p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="bar">
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a class="back" id="volver" href="../07_club/landing_club_AMURAI_v1.0.html">← Volver</a>
+  </div>
+</header>
+
+<main>
+  <div class="box">
+    <span class="eyebrow">Pedido</span>
+    <h1 id="titulo">Tu pedido</h1>
+
+    <div class="card">
+      <h2>Qué compras</h2>
+      <p class="ed" id="p-nombre"></p>
+      <p id="p-incluye"></p>
+      <p id="p-edicion" hidden></p>
+    </div>
+
+    <div class="card">
+      <h2>Dónde y cómo se entrega</h2>
+      <p id="p-entrega"></p>
+    </div>
+
+    <div class="card">
+      <h2>Importe</h2>
+      <table class="tot">
+        <tr><td>Precio base</td><td id="t-base"></td></tr>
+        <tr><td>IVA (21 %)</td><td id="t-iva"></td></tr>
+        <tr class="t"><td>Total a pagar</td><td id="t-total"></td></tr>
+      </table>
+      <p class="note">Todos nuestros precios se comunican como base + IVA. El total es el que verás en la página de pago antes de confirmar.</p>
+    </div>
+
+    <form id="pedido" action="#" method="post" novalidate>
+      <label class="f" for="correo">Tu correo (ahí te llega el recibo y el acceso)</label>
+      <input type="email" id="correo" name="correo" placeholder="Tu correo" autocomplete="email" required>
+
+      <div class="capa1" data-bloque="B">
+        <details class="info"><summary>Información básica sobre protección de datos</summary><table>
+          <tr><th>Responsable</th><td>NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI)</td></tr>
+          <tr><th>Finalidad</th><td>Captación, registro y tratamiento de datos de los usuarios web para la correcta prestación del servicio.</td></tr>
+          <tr><th>Derechos</th><td>Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</td></tr>
+          <tr><th>Información adicional</th><td>Puede consultar la información adicional y detallada sobre Protección de Datos en nuestra página web, apartado <a href="../09_legal/politica-privacidad_AMURAI_v1.0.html" target="_blank" rel="noopener">Política de Privacidad</a></td></tr>
+        </table></details>
+        <label class="chk"><input type="checkbox" class="req" name="consent_privacidad" required><span class="txt">He leído y acepto la información básica de protección de datos.</span></label>
+        <label class="chk"><input type="checkbox" class="req" name="consent_cgc" required><span class="txt">He leído y acepto las <a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html" target="_blank" rel="noopener">Condiciones Generales de Contratación</a>.</span></label>
+        <label class="chk" id="chk-digital" hidden><input type="checkbox" name="consent_digital"><span class="txt">Solicito el acceso inmediato al contenido digital y sé que, al iniciarse, pierdo el derecho de desistimiento.</span></label>
+      </div>
+
+      <div class="club">
+        <label class="chk" style="margin:0"><input type="checkbox" name="consent_club"><span class="txt">SÍ quiero recibir cada día la lección del CLUB AMURAI y sus comunicaciones comerciales. <i>(opcional)</i>
+          <details><summary>Ver texto completo</summary>
+            <div class="full">
+              <p><b>SI quiero recibir comunicaciones comerciales.</b></p>
+              <p>De conformidad con la normativa vigente y aplicable en protección de datos de carácter personal, le informamos que sus datos serán incorporados al sistema de tratamiento titularidad de NEVADA &amp; AMURAI CONSULTORES SL con NIF B56824949 y domicilio social sito en C/ PINTOR MANUEL MALDONADO 34, 18007 GRANADA (GRANADA), y que a continuación se facilita la información de los tratamientos realizados:</p>
+              <p>Finalidad: Captación, registro y tratamiento de datos con finalidades de publicidad y prospección comercial. Plazo de conservación: mientras se mantenga el consentimiento prestado. Base legítima: El consentimiento del interesado. Cesiones: No se prevé realizar cesiones.</p>
+              <p>A su vez, le informamos que puede contactar con el Delegado de Protección de Datos, dirigiéndose por escrito a la dirección de correo dpd.cliente@conversia.es o al teléfono 872 987 665.</p>
+              <p>De acuerdo con los derechos que le confiere la normativa vigente y aplicable en protección de datos podrá ejercer los derechos de acceso, rectificación, limitación de tratamiento, supresión ("derecho al olvido"), portabilidad y oposición al tratamiento de sus datos de carácter personal así como la revocación del consentimiento prestado para el tratamiento de los mismos, dirigiendo su petición a la dirección postal indicada más arriba o al correo electrónico antonio.molina@amurai.es. Podrá dirigirse a la Autoridad de Control competente para presentar la reclamación que considere oportuna.</p>
+              <p>Asimismo, y de acuerdo con lo establecido en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, en su artículo 21, solicitamos también su consentimiento expreso para enviarle publicidad de nuestros productos o promociones que consideremos puedan ser de su interés, por correo electrónico o por cualquier otro medio de comunicación electrónica equivalente.</p>
+              <p>Por último, NEVADA &amp; AMURAI CONSULTORES SL informa que con la aceptación de la información en protección de datos otorga el consentimiento explícito para el tratamiento de los datos de las finalidades mencionadas anteriormente.</p>
+            </div>
+          </details>
+        </span></label>
+      </div>
+
+      <div class="quien"><b>Quién te cobra.</b> El pago se hace en una página segura de Stripe. Lo procesa <b>NEVADA &amp; AMURAI CONSULTORES SL</b>, la sociedad de AMURAI: ese es el nombre que verás en la página de pago, en el recibo y en tu extracto.</div>
+
+      <button class="btn" type="submit" id="pagar" disabled>Pagar</button>
+      <p class="note" id="enlace-pend" hidden><span class="pend">[ENLACE DE PAGO — lo crea Antonio en Stripe y lo pega CMYK en PRODUCTOS]</span></p>
+      <p class="note">Recibo por correo al momento. ¿Factura? Pídela en <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>.</p>
+    </form>
+
+    <div class="nota"><b>Nota para la agencia (no se publica):</b> una página de pedido por producto (masterclass · directo · taller por edición · tramo), montadas desde esta plantilla. El formulario <b>guarda</b> el correo, las casillas marcadas, la fecha y hora y el texto exacto aceptado (D-076) y, después, <b>redirige</b> al enlace de pago de Stripe del producto con <code>?prefilled_email=</code>. En Stripe se activa además la casilla estándar de condiciones (enlaza a /condiciones-de-contratacion/) y, tras el pago, la redirección a la página de gracias de ese producto. Precios base + IVA (Stripe Tax activo en la cuenta). <code>noindex</code>.</div>
+  </div>
+</main>
+
+<footer>
+  <p class="tag">Nunca caminarás solo.</p>
+  <p>www.amurai.es · <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a></p>
+  <nav class="legal-nav" aria-label="Legal"><a href="../09_legal/aviso-legal_AMURAI_v1.0.html">Aviso legal</a><a href="../09_legal/politica-privacidad_AMURAI_v1.0.html">Política de privacidad</a><a href="../09_legal/politica-cookies_AMURAI_v1.0.html">Política de cookies</a><a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html">Condiciones de contratación</a><a href="../09_legal/desistimiento_AMURAI_v1.0.html">Desistimiento</a><a href="#configurar-cookies">Configurar cookies</a></nav>
+</footer>
+
+<script>
+  // ===== PRODUCTOS · los mantiene Antonio (precio base, D-053) y CMYK (enlace de pago de Stripe de cada producto o edición) =====
+  var PRODUCTOS = {
+    masterclass: { nombre: 'Masterclass de Precios · grabada', incluye: 'Acceso inmediato · turno de preguntas incluido · en tu área privada para siempre.',
+      entrega: 'Tras el pago te llega un correo con el acceso al área privada de Nevada & Amurai (la sociedad de AMURAI). Es contenido digital: al pedir el acceso inmediato renuncias al desistimiento.',
+      base: 69, digital: true, volver: '../02_masterclass/landing_masterclass_AMURAI_v1.1.html', enlace: '#' },
+    directo: { nombre: 'Masterclass de Precios · edición en directo', incluye: 'Sesión online en directo con preguntas · y la grabada, en tu área privada.',
+      entrega: 'Antes de la sesión te llega por correo el enlace de acceso. Después, la grabación queda en el área privada de Nevada & Amurai (la sociedad de AMURAI).',
+      base: null, digital: false, volver: '../02_masterclass/masterclass_directo_AMURAI_v1.0.html', enlace: '#' },
+    taller: { nombre: 'Taller presencial · Tu Sistema de Precios', incluye: 'Cinco horas en sala · máximo 25 personas · herramientas del sistema · un mes de soporte por email.',
+      entrega: 'Tu plaza queda reservada en la edición elegida. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. El soporte posterior se atiende desde el área privada de Nevada & Amurai (la sociedad de AMURAI).',
+      base: 390, digital: false, volver: '../03_taller_presencial/taller_ediciones_AMURAI_v1.0.html', enlace: '#' },
+    tramo: { nombre: 'Taller Tu Sistema de Precios · tramo especial para asistentes de la sesión gratuita', incluye: 'El taller completo de cinco horas, con las mismas herramientas y el mes de soporte.',
+      entrega: 'Tu plaza queda reservada. Te llegan por correo el recibo y los datos prácticos. El soporte posterior se atiende desde el área privada de Nevada & Amurai (la sociedad de AMURAI).',
+      base: 290, digital: false, volver: '../06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html', enlace: '#' }
+  };
+  // EDICIONES del taller (mismo listado que taller_ediciones): clave = parámetro edicion
+  var EDICIONES = { 'granada-2026-09-25': 'Granada · viernes 25 de septiembre de 2026 · 9:00 a 14:00 h · Cámara de Comercio de Granada' };
+
+  var q = new URLSearchParams(location.search), key = q.get('producto') || 'masterclass', p = PRODUCTOS[key] || PRODUCTOS.masterclass;
+  function eur(n){ return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €'; }
+  document.getElementById('titulo').textContent = 'Tu pedido';
+  document.getElementById('p-nombre').textContent = p.nombre;
+  document.getElementById('p-incluye').textContent = p.incluye;
+  document.getElementById('p-entrega').textContent = p.entrega;
+  document.getElementById('volver').href = p.volver;
+  document.title = 'Pedido · ' + p.nombre + ' · Amurai';
+  var ed = q.get('edicion');
+  if (ed) { var e = document.getElementById('p-edicion'); e.textContent = EDICIONES[ed] || ('Edición: ' + ed); e.hidden = false; }
+  var btn = document.getElementById('pagar');
+  if (p.base === null) {
+    document.getElementById('t-base').innerHTML = '<span class="pend">[PRECIO DE ESTA EDICIÓN]</span>';
+    document.getElementById('t-iva').textContent = '—'; document.getElementById('t-total').textContent = '—';
+    btn.textContent = 'Pagar';
+  } else {
+    var iva = Math.round(p.base * 21) / 100, total = Math.round((p.base + iva) * 100) / 100;
+    document.getElementById('t-base').textContent = eur(p.base);
+    document.getElementById('t-iva').textContent = eur(iva);
+    document.getElementById('t-total').textContent = eur(total);
+    btn.textContent = 'Pagar ' + eur(total);
+  }
+  if (p.digital) { var d = document.getElementById('chk-digital'); d.hidden = false; var i = d.querySelector('input'); i.classList.add('req'); i.required = true; }
+  if (p.enlace === '#') document.getElementById('enlace-pend').hidden = false;
+
+  // Capa 1: el botón solo se activa con las casillas obligatorias marcadas (D-076).
+  var req = [].slice.call(document.querySelectorAll('#pedido input.req'));
+  function chk(){ btn.disabled = !req.every(function(c){ return c.checked; }); }
+  req.forEach(function(c){ c.addEventListener('change', chk); }); chk();
+
+  // SIN INTEGRACIÓN (D-070): aquí no se guarda nada. En producción, el formulario registra los consentimientos y redirige al enlace de pago.
+  document.getElementById('pedido').addEventListener('submit', function(ev){
+    ev.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; }
+    var correo = document.getElementById('correo').value;
+    if (p.enlace === '#') { alert('Maqueta: aquí se redirige al enlace de pago de Stripe de «' + p.nombre + '» con prefilled_email=' + correo); return; }
+    location.href = p.enlace + (p.enlace.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(correo) + '&locale=es';
+  });
+</script>
+</body>
+</html>

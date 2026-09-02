@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!--
+  AMURAI · PIEZA 2 · MASTERCLASS DE PRECIOS · PRÓXIMAS EDICIONES EN DIRECTO · v1.0
+  Estado: VALIDADO (D-082, 2026-09-02) por Antonio Molina (contenido) y José Ramón Álvarez (gobierno)
+  Página con DOS ESTADOS (D-079), gobernados por el atributo data-edicion del <body>:
+    data-edicion="no" (por defecto) → no hay edición programada: formulario de aviso (entra en el Club,
+                                      etiqueta masterclass-directo-interesado, D-080) + acceso a la grabada.
+    data-edicion="si"               → hay edición programada: ficha de la edición (fecha, hora, formato,
+                                      contenido, condiciones, CTA, inscripción). Los [CORCHETES] se rellenan
+                                      ANTES de publicar; sin fecha de apertura y de cierre escritas, no se publica.
+  El formulario no envía a ningún sitio y la inscripción/pago están fuera de alcance (D-070).
+  Precio del directo: se fija en cada convocatoria y se publica con ella (D-081). No se pre-imprime.
+  Especificación: ESPECIFICACION_masterclass_directo.md.
+  PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
+  PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
+  PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
+  PASO 9n (GATE D, 2026-09-02): fuera «Precio base. Todos nuestros precios se comunican como base + IVA.» (el «+ IVA» ya va junto a la cifra; JR).
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Próximas ediciones en directo · Masterclass de Precios · Amurai</title>
+<meta name="description" content="Próximas ediciones en directo de la Masterclass de Precios. Si no hay ninguna abierta, déjanos tu correo y te avisamos. La grabada está disponible hoy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:18px;--shadow:0 18px 50px rgba(25,25,25,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  header{border-bottom:1px solid var(--line);background:rgba(247,245,240,.86)}
+  header .bar{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+  header img{height:26px;display:block}
+  header a.back{font-size:.92rem;color:var(--muted);text-decoration:none}
+  main{flex:1;padding:64px 24px}
+  .box{max-width:640px;margin:0 auto;width:100%}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:14px 0 18px}
+  h2{font-size:1.4rem;font-weight:900;margin-bottom:10px}
+  .lead{font-size:1.1rem;color:var(--ink-2);margin-bottom:26px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);margin-bottom:22px}
+  .facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+  .fact{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .fact .t{font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+  .fact .v{font-weight:700;margin-top:4px}
+  .card ul{list-style:none;margin:10px 0 18px}
+  .card li{padding:8px 0 8px 26px;position:relative;color:var(--ink-2);border-bottom:1px dashed var(--line);font-size:.98rem}
+  .card li:last-child{border:0}
+  .card li::before{content:"→";position:absolute;left:0;color:var(--gold);font-weight:800}
+  label.f{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  input[type=text],input[type=email]{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;margin-bottom:16px;font:inherit;background:#fff}
+  .aviso{background:var(--cream);border-radius:12px;padding:16px 18px;font-size:.95rem;color:var(--ink-2);margin:4px 0 14px}
+  .aviso b{color:var(--ink)}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;color:var(--ink-2);margin-bottom:18px}
+  .chk input{margin-top:5px;flex:none}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-family:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+  .btn.w{width:100%}
+  .btn.ghost{background:transparent;border-color:var(--line);color:var(--ink);font-weight:600}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(240,195,26,.4)}
+  .btn.ghost:hover{box-shadow:none;border-color:var(--ink)}
+  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+  .rgpd{font-size:.78rem;color:var(--muted);margin-top:12px}
+  .grab{border-left:3px solid var(--gold);padding-left:18px;margin-top:8px}
+  .grab b{display:block;margin-bottom:4px}
+  .grab p{font-size:.95rem;color:var(--ink-2);margin-bottom:12px}
+  .pend{background:#fff3c4;border:1px dashed #c9a400;border-radius:8px;padding:2px 8px;font-size:.85rem;font-weight:700;color:#5a4a00}
+  footer{background:var(--ink);color:rgba(255,255,255,.68);padding:32px 24px;text-align:center;font-size:.95rem}
+  footer .tag{color:var(--gold);font-style:italic;margin:6px 0}
+  [hidden]{display:none!important}
+  /* estados */
+  body[data-edicion="no"] #con-edicion{display:none}
+  body[data-edicion="si"] #sin-edicion{display:none}
+  @media(max-width:560px){.facts{grid-template-columns:1fr}}
+
+/* ===== PASO 9 (E40, 2026-09-02): capa 1 · pie legal · barra CTA móvil · rejillas · encabezados ===== */
+.lm .aviso,.club-form .aviso{font-size:.92rem;color:var(--ink-2);margin:4px 0 14px}
+.capa1{font-size:.8rem;color:var(--muted);line-height:1.5;border-top:1px dashed var(--line);padding-top:14px;margin:6px 0 12px;text-align:left}
+.capa1 table{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:.78rem}
+.capa1 th{text-align:left;font-weight:700;color:var(--ink);padding:3px 8px 3px 0;width:31%;vertical-align:top}
+.capa1 td{padding:3px 0;vertical-align:top}
+.capa1 a{color:var(--ink);font-weight:600}
+.capa1 .chk{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-2);margin:10px 0}
+.capa1 .chk input{margin-top:4px;flex:none;width:16px;height:16px}
+.capa1 .chk .txt{flex:1}
+.capa1 .chk details{display:block}
+.capa1 .chk details:not([open])>.full{display:none}
+.capa1 .chk summary{display:inline-block}
+.capa1 .chk summary{display:inline;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;margin-left:6px;list-style:none;padding:0;background:none;border:0}
+.capa1 .chk summary::-webkit-details-marker{display:none}
+.capa1 .chk summary::after{content:" ▾";font-size:.8rem}
+.capa1 .chk details[open] summary::after{content:" ▴"}
+.capa1 .chk details[open] summary{display:block;margin:4px 0}
+.capa1 .full{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-top:8px;font-size:.78rem;color:var(--ink-2)}
+.capa1 .full p{margin:0 0 8px;padding:0}
+.capa1 .chk details{background:none;border:0;padding:0;margin:0;border-radius:0}
+.s-ink .capa1,.s-ink .capa1 th,.s-ink .capa1 a{color:inherit}
+button.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+footer .legal-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;margin-top:10px;font-size:.85rem}
+footer .legal-nav a,footer p a{color:rgba(255,255,255,.68);text-decoration:none;display:inline-block;padding:10px 4px;line-height:1.2}
+footer .legal-nav a:hover,footer p a:hover{color:#fff}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:900px){.cols-4{grid-template-columns:1fr 1fr}}
+@media(max-width:820px){.cols-3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.steps.cols-4{grid-template-columns:1fr}}
+@media(max-width:400px){.cols-3,.cols-4{grid-template-columns:1fr}}
+.h4{font-weight:700}
+.cta-bar{display:none}
+@media(max-width:640px){
+  .cta-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:10px max(16px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(247,245,240,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .cta-bar[hidden]{display:none!important}
+  .cta-bar .btn{width:100%;justify-content:center;padding:14px 20px}
+}
+
+/* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
+.capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
+.capa1 details.info{display:block;margin:0 0 2px}
+.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary::-webkit-details-marker{display:none}
+.capa1 details.info summary::after{content:" ▾"}
+.capa1 details.info[open] summary::after{content:" ▴"}
+.capa1 details.info table{margin:6px 0 10px}
+.capa1 details.info:not([open])>table{display:none}
+.capa1 .chk{margin:6px 0}
+
+/* ===== PASO 9c (GATE D, JR): sistema de acentos de color, sin tocar el copy ===== */
+.hero .eyebrow.gold,.box>.eyebrow{display:inline-block;background:var(--gold);color:var(--ink);padding:7px 12px;border-radius:999px;font-weight:700;letter-spacing:.18em}
+section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;height:3px;background:var(--gold);margin-right:10px;vertical-align:middle;border-radius:2px}
+.hl{background:linear-gradient(transparent 62%,var(--gold) 62%);padding:0 .08em}
+.s-ink .hl{color:var(--ink)}
+p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+</style>
+</head>
+<body data-edicion="no">
+
+<header id="top">
+  <div class="bar">
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a class="back" href="landing_masterclass_AMURAI_v1.1.html">← Masterclass de Precios</a>
+  </div>
+</header>
+
+<main>
+  <div class="box">
+    <span class="eyebrow">Masterclass de Precios · En directo</span>
+    <h1>Próximas ediciones <span class="hl">en directo</span></h1>
+
+    <!-- ===== ESTADO «SÍ HAY EDICIÓN PROGRAMADA» · se rellena ANTES de publicar ===== -->
+    <div id="con-edicion">
+      <p class="lead">Hay una edición en directo abierta. Esto es lo que necesitas saber para decidir.</p>
+      <div class="card">
+        <h2>Próxima edición · <span class="pend">[NOMBRE O NÚMERO DE LA EDICIÓN]</span></h2>
+        <div class="facts">
+          <div class="fact"><div class="t">Fecha</div><div class="v"><span class="pend">[DÍA DE LA SEMANA, D DE MES DE AAAA]</span></div></div>
+          <div class="fact"><div class="t">Hora</div><div class="v"><span class="pend">[HH:MM]</span> (hora de España)</div></div>
+          <div class="fact"><div class="t">Formato</div><div class="v">Online, en directo. Entre 1 h y 1 h 30, con turno de preguntas</div></div>
+          <div class="fact"><div class="t">Plazas</div><div class="v"><span class="pend">[NÚMERO O «SIN LÍMITE»]</span></div></div>
+        </div>
+        <h2 style="font-size:1.05rem">Contenido</h2>
+        <ul>
+          <li>Precios, ofertas, propuestas y ventas: casos prácticos, dudas y ideas accionables.</li>
+          <li>Turno de preguntas y respuestas al final, para que plantees tu caso.</li>
+          <li><span class="pend">[SI ESTA EDICIÓN TIENE UN FOCO CONCRETO, AQUÍ. SI NO, SE BORRA ESTA LÍNEA]</span></li>
+        </ul>
+        <h2 style="font-size:1.05rem">Condiciones</h2>
+        <ul>
+          <li><b><span class="pend">[PRECIO DE ESTA EDICIÓN]</span> € + IVA.</b> <i>(El precio del directo se fija en cada convocatoria, D-081. Se rellena antes de publicar.)</i></li>
+          <li>Queda grabada, con su turno de preguntas, en tu área privada para siempre.</li>
+          <li>Miembros del Club Amurai, alumnos y clientes de otros servicios: precio especial, anunciado en el Club.</li>
+          <li>Inscripción abierta hasta el <span class="pend">[FECHA DE CIERRE]</span>.</li>
+        </ul>
+        <a class="btn w" href="../10_pedido/pedido_AMURAI_v1.0.html?producto=directo">Quiero mi plaza en directo</a>
+        <p class="rgpd" id="inscripcion">Inscripción y pago: <span class="pend">[ENLACE — PENDIENTE, fuera del alcance de esta fase]</span></p>
+      </div>
+      <div class="grab">
+        <b>¿No puedes ese día? La grabada está disponible hoy.</b>
+        <p>Misma masterclass, con el turno de preguntas grabado. No hay que esperar.</p>
+        <a class="btn ghost" href="landing_masterclass_AMURAI_v1.1.html#reserva">Ver la masterclass grabada · 69 € + IVA</a>
+      </div>
+    </div>
+
+    <!-- ===== ESTADO «NO HAY EDICIÓN PROGRAMADA» · por defecto ===== -->
+    <div id="sin-edicion">
+      <p class="lead">Ahora mismo <b>no hay ninguna edición en directo abierta</b>. Las organizamos a lo largo del año según el interés que vamos viendo. Si quieres asistir a la próxima, déjame tu correo y te aviso en cuanto la abramos.</p>
+
+      <form id="aviso-directo" class="card" action="#" method="post" novalidate>
+        <input type="hidden" name="tag" value="masterclass-directo-interesado">
+        <label class="f" for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="given-name" required>
+        <label class="f" for="correo">Correo</label>
+        <input type="email" id="correo" name="correo" placeholder="Tu correo" autocomplete="email" required>
+        <div class="aviso">
+          Una cosa antes del botón, para que no haya sorpresas: <b>al apuntarte entras también en el CLUB AMURAI</b>. Cada día te llega una lección sobre PRECIOS, MÁRGENES y BENEFICIOS… y es posible que alguna vez te venda algo. Si ya estás en el Club, no te duplico: solo apunto que quieres el directo.
+        </div>
+        <div class="capa1" data-bloque="A">
+<details class="info"><summary>Información básica sobre protección de datos</summary><table>
+<tr><th>Responsable</th><td>NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI)</td></tr>
+<tr><th>Finalidad</th><td>Captación, registro y tratamiento de datos con finalidades de atender sus consultas y/o solicitudes, así como de publicidad y prospección comercial.</td></tr>
+<tr><th>Derechos</th><td>Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</td></tr>
+<tr><th>Información adicional</th><td>Puede consultar la información adicional y detallada sobre Protección de Datos en nuestra página web, apartado <a href="../09_legal/politica-privacidad_AMURAI_v1.0.html" target="_blank" rel="noopener">Política de Privacidad</a></td></tr>
+</table></details>
+<label class="chk"><input type="checkbox" class="req" name="consent_privacidad" required><span class="txt">He leído y acepto la información básica de protección de datos.</span></label>
+<label class="chk"><input type="checkbox" class="req" name="consent_comercial" required><span class="txt">SÍ quiero recibir cada día la lección del CLUB AMURAI y sus comunicaciones comerciales.
+<details><summary>Ver texto completo</summary><div class="full">
+<p><b>SI quiero recibir comunicaciones comerciales.</b></p>
+<p>De conformidad con la normativa vigente y aplicable en protección de datos de carácter personal, le informamos que sus datos serán incorporados al sistema de tratamiento titularidad de NEVADA &amp; AMURAI CONSULTORES SL con NIF B56824949 y domicilio social sito en C/ PINTOR MANUEL MALDONADO 34, 18007 GRANADA (GRANADA), y que a continuación se facilita la información de los tratamientos realizados:</p>
+<p>Finalidad: Captación, registro y tratamiento de datos con finalidades de publicidad y prospección comercial. Plazo de conservación: mientras se mantenga el consentimiento prestado. Base legítima: El consentimiento del interesado. Cesiones: No se prevé realizar cesiones.</p>
+<p>A su vez, le informamos que puede contactar con el Delegado de Protección de Datos, dirigiéndose por escrito a la dirección de correo dpd.cliente@conversia.es o al teléfono 872 987 665.</p>
+<p>De acuerdo con los derechos que le confiere la normativa vigente y aplicable en protección de datos podrá ejercer los derechos de acceso, rectificación, limitación de tratamiento, supresión ("derecho al olvido"), portabilidad y oposición al tratamiento de sus datos de carácter personal así como la revocación del consentimiento prestado para el tratamiento de los mismos, dirigiendo su petición a la dirección postal indicada más arriba o al correo electrónico antonio.molina@amurai.es. Podrá dirigirse a la Autoridad de Control competente para presentar la reclamación que considere oportuna.</p>
+<p>Asimismo, y de acuerdo con lo establecido en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico, en su artículo 21, solicitamos también su consentimiento expreso para enviarle publicidad de nuestros productos o promociones que consideremos puedan ser de su interés, por correo electrónico o por cualquier otro medio de comunicación electrónica equivalente.</p>
+<p>Por último, NEVADA &amp; AMURAI CONSULTORES SL informa que con la aceptación de la información en protección de datos otorga el consentimiento explícito para el tratamiento de los datos de las finalidades mencionadas anteriormente.</p>
+</div></details>
+</span></label>
+</div>
+
+        <button class="btn w" type="submit" id="enviar" disabled>Avísame de la próxima edición en directo</button>
+        <p class="rgpd">Tratamiento de datos por Amurai. Puedes darte de baja cuando quieras, del aviso y del Club, con un clic.</p>
+      </form>
+
+      <div class="card" id="confirmacion" hidden>
+        <h2>Hecho. Te aviso.</h2>
+        <p style="color:var(--ink-2)">Cuando abramos la próxima edición en directo, serás de los primeros en saberlo. Mientras tanto, cada día te llega la lección del CLUB AMURAI.</p>
+      </div>
+
+      <div class="grab">
+        <b>Mientras tanto, la grabada está disponible hoy.</b>
+        <p>Misma masterclass, con el turno de preguntas grabado. No hay que esperar a ninguna fecha.</p>
+        <a class="btn ghost" href="landing_masterclass_AMURAI_v1.1.html#reserva">Ver la masterclass grabada · 69 € + IVA</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="tag">Nunca caminarás solo.</p>
+  <p>www.amurai.es · <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a></p>
+<nav class="legal-nav" aria-label="Legal"><a href="../09_legal/aviso-legal_AMURAI_v1.0.html">Aviso legal</a><a href="../09_legal/politica-privacidad_AMURAI_v1.0.html">Política de privacidad</a><a href="../09_legal/politica-cookies_AMURAI_v1.0.html">Política de cookies</a><a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html">Condiciones de contratación</a><a href="../09_legal/desistimiento_AMURAI_v1.0.html">Desistimiento</a><a href="#configurar-cookies">Configurar cookies</a></nav>
+</footer>
+
+<script>
+  // Consentimiento obligatorio (D-076): el botón no se activa sin la casilla.
+  // SIN INTEGRACIÓN (D-070): aquí solo se muestra la confirmación. La agencia conecta el envío
+  // según ESPECIFICACION_masterclass_directo.md.
+  var f = document.getElementById('aviso-directo');
+  if (f) f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.checkValidity()) { this.reportValidity(); return; }
+    this.hidden = true;
+    document.getElementById('confirmacion').hidden = false;
+  });
+</script>
+
+<script>
+// ===== PASO 9 (E40, 2026-09-02) =====
+// Capa 1: el botón solo se activa con las casillas obligatorias marcadas (D-076, M-L01).
+[].slice.call(document.querySelectorAll('form')).forEach(function(f){
+  var req=[].slice.call(f.querySelectorAll('input.req')), btn=f.querySelector('button[type=submit]');
+  if(!req.length||!btn) return;
+  function chk(){ btn.disabled=!req.every(function(c){return c.checked;}); }
+  req.forEach(function(c){ c.addEventListener('change',chk); }); chk();
+});
+// Formulario de la Telaraña en las landings: sin integración (D-070), solo confirmación en línea.
+[].slice.call(document.querySelectorAll('form.lm-form')).forEach(function(f){
+  f.addEventListener('submit',function(e){ e.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; }
+    this.innerHTML='<div style="font-weight:800;font-size:1.05rem">Hecho. Revisa tu correo: ahí va la Telaraña de Precios y, desde mañana, la lección diaria.</div>'; });
+});
+// Barra de CTA fija en móvil (D-106 §9): aparece al salir del hero; se oculta en la sección de conversión y en el pie.
+(function(){
+  var bar=document.getElementById('cta-bar'); if(!bar||!('IntersectionObserver' in window)) return;
+  var hero=document.querySelector('section'), stops=[], vis={}, heroIn=true;
+  var f=document.querySelector('footer'); if(f) stops.push(f);
+  (bar.getAttribute('data-stop')||'').split(',').forEach(function(s){ s=s.trim(); if(!s) return; var el=document.querySelector(s); if(el) stops.push(el); });
+  function upd(){ var any=false; for(var k in vis){ if(vis[k]) any=true; } bar.hidden=heroIn||any; }
+  if(hero){ new IntersectionObserver(function(e){ heroIn=e[0].isIntersecting; upd(); },{threshold:0}).observe(hero); }
+  stops.forEach(function(s,i){ new IntersectionObserver(function(e){ vis[i]=e[0].isIntersecting; upd(); },{threshold:0}).observe(s); });
+})();
+</script>
+</body>
+</html>

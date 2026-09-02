@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+  AMURAI · PIEZA 1b · TALLER IN-COMPANY · SOLICITUD DE INFORMACIÓN · solicitud_incompany_AMURAI_v1.0
+  Estado: BORRADOR (paso 9, 2026-09-02) · nace de D-105 §4: «un formulario sencillo de registro de solicitud de información».
+  Sustituye al huérfano /formulario-de-solicitud/ de amurai.es (301, E36 R8). URL final: /taller-in-company/solicitud/ (noindex).
+  Formulario corto: nombre, empresa, actividad, correo, teléfono · capa 1 bloque C (E33, D-104) · confirmación con el plazo
+  de D-106 §13 (48 horas laborables). Destino: buzón antonio.molina@amurai.es (X5). SIN INTEGRACIÓN (D-070): la conecta CMYK.
+  Copy de esta página: microcopy de arquitectura del asistente, declarado para que Antonio lo valide (no es copy literal de fuente).
+  PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
+  PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Solicitud de información · Taller in-company · Amurai</title>
+<meta name="description" content="Solicita información del taller de pricing in-company de Amurai: cuéntanos quién eres y a qué se dedica tu empresa y te escribimos en 48 horas laborables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:18px;--shadow:0 18px 50px rgba(25,25,25,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  header{border-bottom:1px solid var(--line);background:rgba(247,245,240,.86)}
+  header .bar{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
+  header img{height:26px;display:block}
+  header a.back{font-size:.92rem;color:var(--muted);text-decoration:none;padding:12px 0;display:inline-block}
+  main{flex:1;padding:64px 24px}
+  .box{max-width:640px;margin:0 auto;width:100%}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:14px 0 18px}
+  .lead{font-size:1.1rem;color:var(--ink-2);margin-bottom:8px}
+  form{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;box-shadow:var(--shadow);margin-top:22px}
+  label.f{display:block;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  input[type=text],input[type=email],input[type=tel]{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;margin-bottom:16px;font:inherit;background:#fff;color:var(--ink)}
+  .capa1{font-size:.8rem;color:var(--muted);line-height:1.5;border-top:1px dashed var(--line);padding-top:14px;margin:6px 0 12px}
+  .capa1 table{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:.78rem}
+  .capa1 th{text-align:left;font-weight:700;color:var(--ink);padding:3px 8px 3px 0;width:31%;vertical-align:top}
+  .capa1 td{padding:3px 0;vertical-align:top}
+  .capa1 a{color:var(--ink);font-weight:600}
+  .chk{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:var(--ink-2);margin:10px 0}
+  .chk input{margin-top:4px;flex:none;width:16px;height:16px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;width:100%;gap:.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:999px;border:1px solid transparent;cursor:pointer;font-family:inherit;text-decoration:none;transition:transform .18s ease,box-shadow .18s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(240,195,26,.4)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+  .rgpd{font-size:.78rem;color:var(--muted);margin-top:12px}
+  .ok{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;box-shadow:var(--shadow);margin-top:22px}
+  .ok h2{font-size:1.4rem;font-weight:900;margin-bottom:8px}
+  .ok p{color:var(--ink-2)}
+  .nota{background:#f3f1ea;border-left:4px solid var(--ink);border-radius:0 12px 12px 0;padding:12px 16px;margin-top:28px;font-size:.85rem;color:var(--ink-2)}
+  footer{background:var(--ink);color:rgba(255,255,255,.68);padding:32px 24px;text-align:center;font-size:.95rem}
+  footer .tag{color:var(--gold);font-style:italic;margin:6px 0}
+  footer a{color:rgba(255,255,255,.68);text-decoration:none}
+  footer .legal-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;margin-top:10px;font-size:.85rem}
+  footer .legal-nav a{display:inline-block;padding:10px 4px;line-height:1.2}
+  footer a:hover{color:#fff}
+  [hidden]{display:none!important}
+
+/* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
+.capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
+.capa1 details.info{display:block;margin:0 0 2px}
+.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary::-webkit-details-marker{display:none}
+.capa1 details.info summary::after{content:" ▾"}
+.capa1 details.info[open] summary::after{content:" ▴"}
+.capa1 details.info table{margin:6px 0 10px}
+.capa1 details.info:not([open])>table{display:none}
+.capa1 .chk{margin:6px 0}
+
+/* ===== PASO 9c (GATE D, JR): sistema de acentos de color, sin tocar el copy ===== */
+.hero .eyebrow.gold,.box>.eyebrow{display:inline-block;background:var(--gold);color:var(--ink);padding:7px 12px;border-radius:999px;font-weight:700;letter-spacing:.18em}
+section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;height:3px;background:var(--gold);margin-right:10px;vertical-align:middle;border-radius:2px}
+.hl{background:linear-gradient(transparent 62%,var(--gold) 62%);padding:0 .08em}
+.s-ink .hl{color:var(--ink)}
+p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="bar">
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a class="back" href="landing_incompany_AMURAI_v2.1.html">← Taller in-company</a>
+  </div>
+</header>
+
+<main>
+  <div class="box">
+    <span class="eyebrow">Taller de Pricing · In Company</span>
+    <h1>Solicitud de información</h1>
+    <p class="lead">Cuéntanos quién eres y a qué se dedica tu empresa. Te escribimos en <b>48 horas laborables</b> para concertar la reunión previa: ahí vemos si el taller encaja, quién debería asistir y qué preparar.</p>
+
+    <form id="solicitud" action="#" method="post" novalidate>
+      <label class="f" for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
+      <label class="f" for="empresa">Empresa</label>
+      <input type="text" id="empresa" name="empresa" placeholder="Nombre de la empresa" autocomplete="organization" required>
+      <label class="f" for="actividad">A qué se dedica</label>
+      <input type="text" id="actividad" name="actividad" placeholder="Sector o actividad principal" required>
+      <label class="f" for="correo">Correo</label>
+      <input type="email" id="correo" name="correo" placeholder="Tu correo" autocomplete="email" required>
+      <label class="f" for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Para la llamada previa" autocomplete="tel" required>
+
+      <div class="capa1" data-bloque="C">
+        <details class="info"><summary>Información básica sobre protección de datos</summary><table>
+          <tr><th>Responsable</th><td>NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI)</td></tr>
+          <tr><th>Finalidad</th><td>Atender sus consultas y/o solicitudes.</td></tr>
+          <tr><th>Derechos</th><td>Acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional.</td></tr>
+          <tr><th>Información adicional</th><td>Puede consultar la información adicional y detallada sobre Protección de Datos en nuestra página web, apartado <a href="../09_legal/politica-privacidad_AMURAI_v1.0.html" target="_blank" rel="noopener">Política de Privacidad</a></td></tr>
+        </table></details>
+        <label class="chk"><input type="checkbox" class="req" name="consent_privacidad" required><span>He leído y acepto la información básica de protección de datos.</span></label>
+        <label class="chk"><input type="checkbox" name="consent_comercial"><span>SI quiero recibir comunicaciones comerciales. <i>(opcional)</i></span></label>
+      </div>
+
+      <button class="btn" type="submit" id="enviar" disabled>Enviar la solicitud</button>
+      <p class="rgpd">Tu solicitud llega a antonio.molina@amurai.es. No la usamos para nada más.</p>
+    </form>
+
+    <div class="ok" id="confirmacion" hidden>
+      <h2>Recibido.</h2>
+      <p>Te escribimos en <b>48 horas laborables</b> para concertar la reunión previa. Si prefieres adelantarte, escríbenos a <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>.</p>
+    </div>
+
+    <div class="nota"><b>Nota para la agencia (no se publica):</b> el formulario envía al buzón <b>antonio.molina@amurai.es</b> con todos los campos y guarda fecha, hora y el texto de la casilla aceptada (D-076). Confirmación en esta misma página; sin página de gracias aparte. La URL vieja <code>/formulario-de-solicitud/</code> redirige aquí con 301 (E36 R8). Esta página lleva <code>noindex</code>.</div>
+  </div>
+</main>
+
+<footer>
+  <p class="tag">Nunca caminarás solo.</p>
+  <p>www.amurai.es · <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a></p>
+  <nav class="legal-nav" aria-label="Legal"><a href="../09_legal/aviso-legal_AMURAI_v1.0.html">Aviso legal</a><a href="../09_legal/politica-privacidad_AMURAI_v1.0.html">Política de privacidad</a><a href="../09_legal/politica-cookies_AMURAI_v1.0.html">Política de cookies</a><a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html">Condiciones de contratación</a><a href="../09_legal/desistimiento_AMURAI_v1.0.html">Desistimiento</a><a href="#configurar-cookies">Configurar cookies</a></nav>
+</footer>
+
+<script>
+  // Capa 1: el botón solo se activa con la casilla obligatoria (D-076).
+  var req=[].slice.call(document.querySelectorAll('#solicitud input.req')), btn=document.getElementById('enviar');
+  function chk(){ btn.disabled=!req.every(function(c){return c.checked;}); }
+  req.forEach(function(c){ c.addEventListener('change',chk); }); chk();
+  // SIN INTEGRACIÓN (D-070): solo se muestra la confirmación. La agencia conecta el envío al buzón.
+  document.getElementById('solicitud').addEventListener('submit', function(e){
+    e.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; }
+    this.hidden=true; document.getElementById('confirmacion').hidden=false;
+  });
+</script>
+</body>
+</html>

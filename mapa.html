@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- Portada de revisión · maquetas de amurai.es · septiembre 2026 · uso interno del equipo -->
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="noindex,nofollow">
+<title>amurai.es · maquetas en revisión</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:16px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .top{background:var(--ink);color:var(--gold);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 12px}
+  .wrap{max-width:1040px;margin:0 auto;padding:28px 20px 64px}
+  .logo{height:26px;width:auto;display:block;margin-bottom:22px}
+  h1{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;letter-spacing:-.02em;line-height:1.08;margin:6px 0 12px;text-wrap:balance}
+  .lead{color:var(--ink-2);margin-bottom:8px;max-width:70ch}
+  .start{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:22px 0 6px}
+  .start a{display:block;background:var(--ink);color:#fff;border-radius:var(--r);padding:18px 20px;text-decoration:none}
+  .start a b{display:block;font-size:1.1rem}
+  .start a span{display:block;color:rgba(255,255,255,.7);font-size:.9rem;margin-top:4px}
+  .start a.g{background:var(--gold);color:var(--ink)}
+  .start a.g span{color:rgba(25,25,25,.7)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px 32px;margin-top:26px}
+  h2{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  h2::before{content:"";display:inline-block;width:18px;height:3px;background:var(--gold);margin-right:10px;vertical-align:middle;border-radius:2px}
+  ol{list-style:none;display:grid;gap:8px}
+  ol li a{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px;text-decoration:none;color:var(--ink);min-height:54px}
+  ol li a:hover,ol li a:focus-visible{border-color:var(--ink);outline:none}
+  .n{flex:none;width:32px;height:32px;border-radius:10px;background:var(--cream);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;font-variant-numeric:tabular-nums}
+  .n.g{background:var(--gold)}.n.d{background:var(--ink);color:var(--gold)}
+  .t b{display:block;font-weight:700}.t span{display:block;color:var(--muted);font-size:.84rem}
+  .box{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;margin-top:28px;max-width:74ch}
+  .box h3{font-size:1rem;font-weight:800;margin-bottom:8px}
+  .box ul{padding-left:18px;color:var(--ink-2);display:grid;gap:6px;font-size:.96rem}
+  .mira{background:var(--cream);border-left:5px solid var(--gold);border-radius:var(--r);padding:16px 18px;margin-top:18px;font-size:.96rem;color:var(--ink-2);max-width:74ch}
+  .mira b{color:var(--ink)}
+  .nota{margin-top:16px;font-size:.84rem;color:var(--muted);max-width:70ch}
+  @media(max-width:640px){.start{grid-template-columns:1fr}.wrap{padding:22px 16px 56px}}
+</style>
+</head>
+<body>
+<div class="top">amurai.es · maquetas en revisión · septiembre 2026</div>
+<div class="wrap">
+  <img class="logo" src="piezas/_assets/amurai-logo-ink.png" alt="AMURAI">
+  <h1>amurai.es, montado para que lo recorras entero</h1>
+  <p class="lead">Cada enlace abre una página. Dentro, los menús y los botones llevan de una a otra como en la web final. En el móvil funciona igual: el menú está en el icono de arriba a la derecha y el botón principal queda fijo abajo.</p>
+
+  <div class="start">
+    <a class="g" href="piezas/07_club/landing_club_AMURAI_v1.0.html"><b>Empezar por la home</b><span>y navegar desde el menú, como lo haría un cliente</span></a>
+    <a href="web/servicios_amurai_es_v1.0.html"><b>Ir a la Escalera de servicios</b><span>los seis cajones, cada uno con su landing</span></a>
+  </div>
+
+  <div class="grid">
+    <div>
+      <h2>Sitio · navegación abierta</h2>
+      <ol>
+        <li><a href="piezas/07_club/landing_club_AMURAI_v1.0.html"><span class="n g">1</span><span class="t"><b>Home · Club Amurai</b><span>menú, portada, tres formularios</span></span></a></li>
+        <li><a href="web/servicios_amurai_es_v1.0.html"><span class="n">2</span><span class="t"><b>Escalera de servicios</b><span>seis cajones, sin precios a propósito</span></span></a></li>
+        <li><a href="web/como-lo-hacemos_amurai_es_v1.0.html"><span class="n d">3</span><span class="t"><b>¿Cómo lo hacemos?</b><span>método, quiénes somos, por qué existe Amurai</span></span></a></li>
+      </ol>
+      <h2 style="margin-top:22px">Pedido y gracias</h2>
+      <ol>
+        <li><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=masterclass"><span class="n">14</span><span class="t"><b>Pedido · masterclass</b><span>83,49 €</span></span></a></li>
+        <li><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=taller&amp;edicion=granada-2026-09-25"><span class="n d">15</span><span class="t"><b>Pedido · taller (Granada)</b><span>471,90 €</span></span></a></li>
+        <li><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=tramo"><span class="n g">15b</span><span class="t"><b>Pedido · tramo especial</b><span>350,90 €</span></span></a></li>
+        <li><a href="piezas/10_pedido/gracias_AMURAI_v1.0.html?producto=taller"><span class="n">16</span><span class="t"><b>Gracias tras el pago</b></span></a></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Landings y sus páginas</h2>
+      <ol>
+        <li><a href="piezas/01_incompany/landing_incompany_AMURAI_v2.1.html"><span class="n g">4</span><span class="t"><b>Taller in-company</b></span></a></li>
+        <li><a href="piezas/01_incompany/solicitud_incompany_AMURAI_v1.0.html"><span class="n">5</span><span class="t"><b>Solicitud de información in-company</b></span></a></li>
+        <li><a href="piezas/02_masterclass/landing_masterclass_AMURAI_v1.1.html"><span class="n d">6</span><span class="t"><b>Masterclass grabada</b></span></a></li>
+        <li><a href="piezas/02_masterclass/masterclass_directo_AMURAI_v1.0.html"><span class="n g">7</span><span class="t"><b>Masterclass · ediciones en directo</b></span></a></li>
+        <li><a href="piezas/03_taller_presencial/landing_taller_presencial_AMURAI_v1.2.html"><span class="n">8</span><span class="t"><b>Taller presencial</b></span></a></li>
+        <li><a href="piezas/03_taller_presencial/taller_ediciones_AMURAI_v1.0.html"><span class="n d">9</span><span class="t"><b>Taller · próximas ediciones</b></span></a></li>
+        <li><a href="piezas/04_auditoria/landing_auditoria_precios_AMURAI_v1.0.html"><span class="n g">10</span><span class="t"><b>Auditoría de precios</b></span></a></li>
+        <li><a href="piezas/05_eventos/landing_colectivos_AMURAI_v1.0.html"><span class="n">11</span><span class="t"><b>Sesión para colectivos</b></span></a></li>
+        <li><a href="piezas/06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html"><span class="n d">12</span><span class="t"><b>Tramo especial</b><span>no se enlaza desde la web; se envía a cada colectivo</span></span></a></li>
+        <li><a href="piezas/08_escuela/lista_espera_escuela_AMURAI_v1.0.html"><span class="n g">13</span><span class="t"><b>Escuela · lista de espera</b></span></a></li>
+      </ol>
+    </div>
+    <div>
+      <h2>Páginas legales</h2>
+      <ol>
+        <li><a href="piezas/09_legal/aviso-legal_AMURAI_v1.0.html"><span class="n">17</span><span class="t"><b>Aviso legal</b></span></a></li>
+        <li><a href="piezas/09_legal/politica-privacidad_AMURAI_v1.0.html"><span class="n d">18</span><span class="t"><b>Política de privacidad</b></span></a></li>
+        <li><a href="piezas/09_legal/politica-cookies_AMURAI_v1.0.html"><span class="n g">19</span><span class="t"><b>Política de cookies</b></span></a></li>
+        <li><a href="piezas/09_legal/condiciones-contratacion_AMURAI_v1.0.html"><span class="n">20</span><span class="t"><b>Condiciones de contratación</b><span>v1.2 · pendiente de validación</span></span></a></li>
+        <li><a href="piezas/09_legal/desistimiento_AMURAI_v1.0.html"><span class="n d">21</span><span class="t"><b>Desistimiento</b></span></a></li>
+      </ol>
+      <h2 style="margin-top:22px">Bloques sueltos de la Escalera</h2>
+      <ol>
+        <li><a href="piezas/05_eventos/bloque_web_eventos_AMURAI_v1.0.html"><span class="n g">b1</span><span class="t"><b>Bloque Eventos</b></span></a></li>
+        <li><a href="piezas/07_club/bloque_web_club_AMURAI_v1.0.html"><span class="n">b2</span><span class="t"><b>Bloque Club</b></span></a></li>
+        <li><a href="piezas/08_escuela/bloque_web_escuela_AMURAI_v1.0.html"><span class="n d">b3</span><span class="t"><b>Bloque Escuela</b></span></a></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="box">
+    <h3>Antes de empezar</h3>
+    <ul>
+      <li>Los formularios no envían nada. Puedes rellenarlos para ver cómo se comportan.</li>
+      <li>Las fotos y los tres vídeos son provisionales; se sustituyen cuando haya material propio de Amurai.</li>
+      <li>La Escalera va sin precios a propósito. Cada precio está en su landing.</li>
+      <li>«Configurar cookies» y el pago no hacen nada todavía: eso lo monta la agencia.</li>
+      <li>Los textos legales están pendientes de la revisión final de la agencia de protección de datos.</li>
+    </ul>
+  </div>
+
+  <div class="mira"><b>Para proponer una mejora:</b> haz una captura, marca lo que cambiarías y envíasela a José Ramón con el nombre de la página. Si es texto, escribe la frase nueva completa: se registra tal cual, sin retoques.</div>
+
+  <p class="nota">Enlace de uso interno del equipo. No está indexado. No lo compartas fuera.</p>
+</div>
+</body>
+</html>

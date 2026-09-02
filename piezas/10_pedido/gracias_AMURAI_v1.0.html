@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+  AMURAI · PIEZA 10 · GRACIAS (tras el pago) · gracias_AMURAI_v1.0
+  Estado: BORRADOR (paso 9, 2026-09-02) · nace de D-106 (GATE C). Es la página a la que Stripe redirige tras el pago
+  (after_completion → redirect, con {CHECKOUT_SESSION_ID} opcional). Una por producto, montadas desde esta plantilla:
+  ?producto=masterclass | directo | taller | tramo. URLs finales (E37 L9b): /…/gracias/ · noindex.
+  Dice qué pasa ahora (E38 §5): acceso en el área privada de Nevada & Amurai (D-106 §6), recibo, factura a petición, Club si marcó la casilla.
+  Copy: microcopy de arquitectura del asistente, declarado para que Antonio lo valide.
+  PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Gracias · Amurai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:18px;--shadow:0 18px 50px rgba(25,25,25,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
+  header{border-bottom:1px solid var(--line);background:rgba(247,245,240,.86)}
+  header .bar{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center}
+  header img{height:26px;display:block}
+  main{flex:1;display:flex;align-items:center;padding:64px 24px}
+  .box{max-width:640px;margin:0 auto;width:100%}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  h1{font-size:clamp(2rem,5vw,3rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:14px 0 18px}
+  .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:26px 28px;box-shadow:var(--shadow);margin-top:18px}
+  .card h2{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:10px}
+  .card p{color:var(--ink-2)}
+  .card p+p{margin-top:10px}
+  .card ol{margin:6px 0 0 20px;color:var(--ink-2)}
+  .card li{margin:6px 0}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:999px;border:1px solid transparent;text-decoration:none;margin-top:22px}
+  .btn.ghost{background:transparent;border-color:var(--line)}
+  .nota{background:#f3f1ea;border-left:4px solid var(--ink);border-radius:0 12px 12px 0;padding:12px 16px;margin-top:28px;font-size:.85rem;color:var(--ink-2)}
+  footer{background:var(--ink);color:rgba(255,255,255,.68);padding:32px 24px;text-align:center;font-size:.95rem}
+  footer .tag{color:var(--gold);font-style:italic;margin:6px 0}
+  footer a{color:rgba(255,255,255,.68);text-decoration:none}
+  footer .legal-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 14px;margin-top:10px;font-size:.85rem}
+  footer .legal-nav a{display:inline-block;padding:10px 4px;line-height:1.2}
+  footer a:hover{color:#fff}
+  [hidden]{display:none!important}
+
+/* ===== PASO 9c (GATE D, JR): sistema de acentos de color, sin tocar el copy ===== */
+.hero .eyebrow.gold,.box>.eyebrow{display:inline-block;background:var(--gold);color:var(--ink);padding:7px 12px;border-radius:999px;font-weight:700;letter-spacing:.18em}
+section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;height:3px;background:var(--gold);margin-right:10px;vertical-align:middle;border-radius:2px}
+.hl{background:linear-gradient(transparent 62%,var(--gold) 62%);padding:0 .08em}
+.s-ink .hl{color:var(--ink)}
+p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
+.stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="bar"><a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a></div>
+</header>
+
+<main>
+  <div class="box">
+    <span class="eyebrow">Pago recibido</span>
+    <h1>Hecho. Gracias.</h1>
+
+    <div class="card">
+      <h2 id="h-nombre">Tu compra</h2>
+      <p id="p-ahora"></p>
+      <ol id="pasos"></ol>
+    </div>
+
+    <div class="card">
+      <h2>Recibo, factura y dudas</h2>
+      <p>El recibo te llega ahora mismo por correo desde Stripe, a nombre de <b>NEVADA &amp; AMURAI CONSULTORES SL</b> (la sociedad de AMURAI). ¿Necesitas factura? Pídela respondiendo al correo del recibo o en <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>. Para cualquier duda, el mismo buzón.</p>
+      <p id="p-club" hidden>Si marcaste la casilla del CLUB AMURAI, desde mañana te llega cada día la lección sobre precios.</p>
+    </div>
+
+    <a class="btn ghost" href="../07_club/landing_club_AMURAI_v1.0.html">Volver a amurai.es</a>
+
+    <div class="nota"><b>Nota para la agencia (no se publica):</b> una página de gracias por producto. En Stripe, el enlace de pago de cada producto redirige aquí tras el pago (<i>Después del pago → redirigir</i>), opcionalmente con <code>{CHECKOUT_SESSION_ID}</code>. Registro de puerta: Antonio etiqueta la compra en GetResponse (<code>cliente-&lt;servicio&gt;</code>) a partir de la lista de pagos de Stripe (D-106 §7). <code>noindex</code>.</div>
+  </div>
+</main>
+
+<footer>
+  <p class="tag">Nunca caminarás solo.</p>
+  <p>www.amurai.es · <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a></p>
+  <nav class="legal-nav" aria-label="Legal"><a href="../09_legal/aviso-legal_AMURAI_v1.0.html">Aviso legal</a><a href="../09_legal/politica-privacidad_AMURAI_v1.0.html">Política de privacidad</a><a href="../09_legal/politica-cookies_AMURAI_v1.0.html">Política de cookies</a><a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html">Condiciones de contratación</a><a href="../09_legal/desistimiento_AMURAI_v1.0.html">Desistimiento</a><a href="#configurar-cookies">Configurar cookies</a></nav>
+</footer>
+
+<script>
+  var TEXTOS = {
+    masterclass: { nombre: 'Masterclass de Precios · grabada', ahora: 'En unos minutos te llega un correo con el acceso al área privada de Nevada & Amurai, la sociedad de AMURAI. Ahí está la masterclass, con el turno de preguntas, para siempre.',
+      pasos: ['Busca el correo con el acceso (mira en spam si no lo ves).', 'Entra en el área privada y guarda el enlace.', 'Si en una hora no te ha llegado, escríbenos y lo resolvemos.'] },
+    directo: { nombre: 'Masterclass de Precios · edición en directo', ahora: 'Tu plaza en directo está reservada. Antes de la sesión te llega por correo el enlace de acceso; después, la grabación queda en el área privada de Nevada & Amurai, la sociedad de AMURAI.',
+      pasos: ['Apunta la fecha y la hora de la sesión (van en el recibo).', 'El enlace de acceso te llega por correo antes de la sesión.', 'Prepara tus preguntas: hay turno en directo.'] },
+    taller: { nombre: 'Taller presencial · Tu Sistema de Precios', ahora: 'Tu plaza está reservada. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. Unos días antes, un recordatorio.',
+      pasos: ['Revisa el correo con lugar, hora y qué traer.', 'Trae ejemplos reales de tus precios: se trabaja sobre lo tuyo.', 'Después del taller tienes un mes de soporte por email.'] },
+    tramo: { nombre: 'Taller Tu Sistema de Precios · tramo especial', ahora: 'Tu plaza está reservada. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. Unos días antes, un recordatorio.',
+      pasos: ['Revisa el correo con lugar, hora y qué traer.', 'Trae tu diagnóstico de la sesión gratuita: empezamos por ahí.', 'Después del taller tienes un mes de soporte por email.'] }
+  };
+  var key = new URLSearchParams(location.search).get('producto') || 'masterclass', t = TEXTOS[key] || TEXTOS.masterclass;
+  document.getElementById('h-nombre').textContent = t.nombre;
+  document.getElementById('p-ahora').textContent = t.ahora;
+  var ol = document.getElementById('pasos'); t.pasos.forEach(function(s){ var li = document.createElement('li'); li.textContent = s; ol.appendChild(li); });
+  document.getElementById('p-club').hidden = false;
+  document.title = 'Gracias · ' + t.nombre + ' · Amurai';
+</script>
+</body>
+</html>

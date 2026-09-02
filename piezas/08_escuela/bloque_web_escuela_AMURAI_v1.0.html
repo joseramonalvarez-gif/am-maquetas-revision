@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+  AMURAI · PIEZA 8 · ESCUELA DE PRECIOS · parte (a) · BLOQUE PARA LA WEB · v1.0
+  Estado: VALIDADO (D-082, 2026-09-02) por Antonio Molina (contenido) y José Ramón Álvarez (gobierno)
+  Dónde va: amurai.es, en el sitio que hoy ocupa «Nuestra promesa» (D-073). Un solo CTA → formulario (D-078 a).
+  Fuente del texto: descripción de Antonio Molina (D-021, encargo 3.2). Sin precio (D-049). Sin fecha.
+  Este fichero es una vista previa del bloque sobre el fondo de la web; lo que se emite es la <section>.
+-->
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Escuela de Precios · bloque web · Amurai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#191919;--ink-2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--white:#fff;--muted:rgba(25,25,25,.66);--line:rgba(25,25,25,.12);--r:18px;--shadow:0 18px 50px rgba(25,25,25,.10)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  h2{font-size:clamp(1.8rem,3.6vw,2.7rem);line-height:1.08;letter-spacing:-.02em;font-weight:900;margin:12px 0 18px}
+  .lead{font-size:1.18rem;color:var(--ink-2);max-width:64ch}
+  .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--ink);font-weight:700;font-size:1rem;padding:15px 26px;border-radius:999px;text-decoration:none;border:1px solid transparent;transition:transform .18s ease,box-shadow .18s ease}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(240,195,26,.4)}
+  .esc{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:center}
+  .esc .card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px;box-shadow:var(--shadow)}
+  .esc .card h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:14px;font-weight:700}
+  .esc .card ul{list-style:none}
+  .esc .card li{padding:10px 0 10px 30px;border-bottom:1px dashed var(--line);position:relative;color:var(--ink-2);font-size:.98rem}
+  .esc .card li:last-child{border:0}
+  .esc .card li::before{content:"→";position:absolute;left:0;top:10px;color:var(--gold);font-weight:800}
+  .note{font-size:.92rem;color:var(--muted);margin-top:14px;max-width:60ch}
+  .cta{margin-top:26px}
+  @media(max-width:820px){.esc{grid-template-columns:1fr}section{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<!-- ===== BLOQUE QUE SE EMITE (sustituye a «Nuestra promesa») ===== -->
+<section class="s-cream" id="escuela-de-precios" style="background:var(--cream)">
+  <div class="wrap esc">
+    <div>
+      <span class="eyebrow">Escuela de Precios · la comunidad</span>
+      <h2>ESCUELA DE PRECIOS</h2>
+      <p class="lead" style="margin-bottom:12px"><b>La membresía sobre PRECIOS en español.</b></p>
+      <p class="lead" style="margin-bottom:12px">Nada más entrar, más de 5 horas de formación en precios, ventas y clientes.</p>
+      <p class="lead" style="margin-bottom:12px">Cada mes, un directo donde analizamos los casos y las dudas que los alumnos envían antes. Y cada mes, una lección nueva sobre precios, ofertas y ventas.</p>
+      <p class="lead">Todo queda grabado en tu espacio, para verlo cuando quieras.</p>
+      <p class="note">Las puertas se abren en fechas concretas que se anuncian con antelación en el CLUB AMURAI. Si quieres enterarte antes que nadie, apúntate a la lista de espera.</p>
+      <div class="cta"><a href="lista_espera_escuela_AMURAI_v1.0.html" class="btn">Apúntame a la lista de espera</a></div>
+    </div>
+    <div class="card">
+      <h3>Lo que hay dentro</h3>
+      <ul>
+        <li><b>Más de 5 horas</b> de formación en precios, ventas y clientes, nada más entrar.</li>
+        <li><b>Un directo al mes</b> con los casos y las dudas que enviáis antes.</li>
+        <li><b>Una lección al mes</b> sobre precios, ofertas y ventas.</li>
+        <li><b>Cameos y colaboraciones</b> de referentes de otras áreas de negocio e inversión.</li>
+        <li><b>Todo grabado</b> en tu espacio, para verlo cuando quieras.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ===== FIN DEL BLOQUE ===== -->
+
+</body>
+</html>
