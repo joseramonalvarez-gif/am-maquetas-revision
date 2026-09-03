@@ -7,6 +7,7 @@
   Fechas y ciudades: en taller_ediciones_AMURAI_v1.0.html. Precio: 390 € + IVA (D-046, D-053). Sin tramo B (D-060).
   Cifras de caso como mecanismo (D-063). Sin enlace de pago (D-070). Huecos en FICHA_03_taller_presencial.md.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
+  PASO 9x (GATE D, 2026-09-03): cifras de caso publicadas por orden de JR (D-111): +260 % beneficio neto (Jaén), +7 puntos de margen (salud), ticket ×3 (servicios profesionales). Facturación B2B sigue sin cifra.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
   PASO 9h (GATE D, 2026-09-02): fichas de datos con icono.
@@ -267,6 +268,7 @@
   /* reveal — sobrio, a nivel de sección. Visible por defecto; la animación solo se añade al entrar (nunca oculta contenido). */
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
+  .mini .lbl{font-weight:700;color:var(--ink);margin:0 0 8px}
 </style>
 <style>
   .diag{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:26px;list-style:none;counter-reset:q}
@@ -448,12 +450,12 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     <div class="case-hero rv">
       <span class="eyebrow">Caso real · Empresa de instalaciones · Jaén</span>
       <blockquote style="margin-top:12px">Llevaba años cediendo precio cuando el cliente apretaba. Sin argumentos. Sin sistema. Cuando analizamos juntos su estructura de costes reales, su posicionamiento y su proceso de venta, el cambio fue ordenado, sin saltos.</blockquote>
-      <span class="case-stat" style="font-size:clamp(1.4rem,3.5vw,2rem)">Subió precios <b>sin perder clientes</b>.</span>
-      <p class="muted">Mismo sector. Mismos clientes. Misma competencia. Solo cambió el sistema.</p>
+      <span class="case-stat"><b>+260 %</b> de beneficio neto</span>
+      <p class="muted">Subió precios sin perder clientes. Mismo sector. Mismos clientes. Misma competencia. Solo cambió el sistema.</p>
     </div>
     <div class="minis rv">
-      <div class="mini"><div class="n" style="font-size:1.3rem">Más margen</div><p class="muted">Empresa del sector salud. Un año. Solo ajustando posicionamiento y escalera de precios.</p></div>
-      <div class="mini"><div class="n" style="font-size:1.3rem">Más ticket</div><p class="muted">Despacho de servicios profesionales. Doce meses trabajando el proceso de venta con el nuevo sistema.</p></div>
+      <div class="mini"><div class="n">+7 puntos</div><div class="lbl">de margen</div><p class="muted">Empresa del sector salud. Un año. Solo ajustando posicionamiento y escalera de precios.</p></div>
+      <div class="mini"><div class="n">×3</div><div class="lbl">el ticket</div><p class="muted">Despacho de servicios profesionales. Doce meses trabajando el proceso de venta con el nuevo sistema.</p></div>
       <div class="mini"><div class="n" style="font-size:1.3rem">Más facturación</div><p class="muted">Empresa de servicios B2B. Dos años. Con el mismo equipo. Solo cambió el sistema de precios.</p></div>
     </div>
     <h3 class="rv" style="margin-top:44px;font-size:1.3rem">Lo que dicen quienes ya han pasado por el taller.</h3>
