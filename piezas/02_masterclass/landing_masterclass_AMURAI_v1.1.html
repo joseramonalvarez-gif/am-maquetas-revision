@@ -8,6 +8,7 @@
   Plantilla: landing_incompany.html del 13-jul-2026 (D-039). Precio: 69 € + IVA (D-066). Sin enlace de pago (D-070).
   Huecos declarados en FICHA_02_masterclass.md.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
+  PASO 9u (GATE D, 2026-09-03): «Quién la imparte» solo con Antonio (JR, ronda 34); la tarjeta de JR se retira de esta masterclass.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9b (GATE D, 2026-09-02): «Lo que incluye» como tarjetas con icono.
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
@@ -265,6 +266,9 @@
   /* reveal — sobrio, a nivel de sección. Visible por defecto; la animación solo se añade al entrar (nunca oculta contenido). */
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
+  .speakers.one{grid-template-columns:1fr;max-width:820px}
+  .speakers.one .sp-foto{width:136px;height:136px}
+  @media(max-width:640px){.speakers.one .sp-foto{width:96px;height:96px}}
 </style>
 <style>
   /* v1.1 · acceso al directo, claramente identificado */
@@ -459,21 +463,13 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
   <div class="wrap">
     <span class="eyebrow rv">Quién la imparte</span>
     <h2 class="big rv">Quién está al otro lado de la pantalla.</h2>
-    <div class="speakers rv">
+    <div class="speakers one rv">
       <div class="sp">
         <img class="sp-foto" src="../_assets/bio-antonio.jpg" alt="Antonio Molina">
         <div>
           <div class="nm">Antonio Molina</div>
           <div class="role">Fundador de Amurai</div>
           <p>Fundador de varias empresas de distintos sectores. Su recorrido va de la pyme y la empresa familiar a puestos de dirección en grandes corporaciones. Formado en IESE Business School, ha construido el sistema de los 6 pasos desde el trabajo directo con pymes de construcción, distribución, industria y servicios. Lo que imparte es lo que ha aplicado en empresa real, con resultados medibles.</p>
-        </div>
-      </div>
-      <div class="sp">
-        <img class="sp-foto" src="../_assets/bio-jr.jpg" alt="José Ramón Álvarez">
-        <div>
-          <div class="nm">José Ramón Álvarez</div>
-          <div class="role">Socio de Amurai · Ponente</div>
-          <p>Más de 20 años en ventas, de la pyme a la gran corporación —de comercial a director nacional de ventas, con paso por compañías como Holaluz—, gestionando equipos y canales comerciales a nivel nacional. Hoy ayuda a empresas de cualquier tamaño a construir sistemas que funcionen: con datos, con método y sin depender de la intuición.</p>
         </div>
       </div>
     </div>
