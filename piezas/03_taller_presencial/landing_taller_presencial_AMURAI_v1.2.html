@@ -8,6 +8,7 @@
   Cifras de caso como mecanismo (D-063). Sin enlace de pago (D-070). Huecos en FICHA_03_taller_presencial.md.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
   PASO 9x (GATE D, 2026-09-03): cifras de caso publicadas por orden de JR (D-111): +260 % beneficio neto (Jaén), +7 puntos de margen (salud), ticket ×3 (servicios profesionales). Facturación B2B sigue sin cifra.
+  PASO 9y (GATE D, 2026-09-03): la condición de plazas bajo el precio pasa a callout con subrayado, como la del hero (JR, ronda 39).
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
   PASO 9h (GATE D, 2026-09-02): fichas de datos con icono.
@@ -269,6 +270,7 @@
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
   .mini .lbl{font-weight:700;color:var(--ink);margin:0 0 8px}
+  .trust.callout{background:rgba(240,195,26,.16);border:1px solid rgba(240,195,26,.5);border-left:5px solid var(--gold);border-radius:12px;padding:16px 18px;font-size:1.08rem;font-weight:600;color:var(--ink);max-width:62ch;line-height:1.5}
 </style>
 <style>
   .diag{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:26px;list-style:none;counter-reset:q}
@@ -576,9 +578,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     <div class="roi rv" style="margin-top:26px">
       <p>Si tu facturación está en torno a 1,5 M€ y corriges <b>un punto de margen</b> con el sistema, estás hablando de <b>15.000 € al año</b>. El taller no es un gasto de formación. Es la primera decisión del nuevo sistema de precios.</p>
     </div>
-    <ul class="reserve rv">
-      <li>Sin descuentos adicionales. Sin prórroga. 25 plazas: cuando se cubren, se cierra. Sin excepciones.</li>
-    </ul>
+    <p class="trust callout rv" style="margin:20px auto 0">Sin descuentos adicionales. Sin prórroga. 25 plazas: <span class="hl">cuando se cubren, se cierra</span>. Sin excepciones.</p>
   </div>
 </section>
 
