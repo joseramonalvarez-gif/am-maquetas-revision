@@ -11,6 +11,7 @@
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
   PASO 9z (GATE D, 2026-09-03): «¿Para qué te sirve?» partido en pregunta + tres columnas con subrayado; mismas palabras (JR, ronda 40).
   PASO 9aa (GATE D, 2026-09-03): retirado el párrafo de intro de «Lo que cuesta» (JR, ronda 41).
+  PASO 9ab (GATE D, 2026-09-03): caja «La otra cuenta…» partida en entrada + cuerpo + cierre con filete; mismas palabras (JR, ronda 42).
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
   PASO 9n (GATE D, 2026-09-02): fuera «Precio base. Todos nuestros precios se comunican como base + IVA.» (el «+ IVA» ya va junto a la cifra; JR).
@@ -273,6 +274,12 @@
   .kicker-split .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px 28px}
   .kicker-split .cols p{font-size:1.02rem;font-weight:500;line-height:1.55;padding-top:12px;border-top:2px solid rgba(240,195,26,.75);margin:0}
   @media(max-width:820px){.kicker-split .cols{grid-template-columns:1fr;gap:14px}}
+  .roi-split{padding:26px 28px}
+  .roi-split p{margin:0}
+  .roi-split .lead-line{font-size:1.22rem;font-weight:800;color:var(--ink);line-height:1.25;margin-bottom:8px}
+  .roi-split .body{color:var(--ink-2);font-size:1.02rem;line-height:1.6}
+  .roi-split .close{margin-top:16px;padding-top:14px;border-top:2px solid rgba(240,195,26,.75);font-weight:800;font-size:1.08rem;color:var(--ink);line-height:1.35}
+  @media(max-width:640px){.roi-split{padding:20px}}
 </style>
 <style>
   .why.four{grid-template-columns:repeat(4,1fr)}
@@ -566,8 +573,10 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       <div class="amount"><small>Auditoría y Estrategia de Márgenes y Precios</small>desde 15.000 € <span style="font-size:1.1rem;font-weight:700;color:var(--muted)">+ IVA</span></div>
       <p class="incl">Tres meses · tres fases · tu sistema de precios montado y calculado.</p>
     </div>
-    <div class="roi rv" style="margin-top:26px">
-      <p>La otra cuenta ya la estás pagando, aunque no la veas: cada mes que la tarifa sigue como está, la subida de costes que no repercutiste se cobra sola, en cada venta. Cuánto es, exactamente, en tu caso — en euros — es una de las cosas que esta auditoría te pone delante. <b>Lo que cobramos se compara contra esa fuga, no contra una promesa.</b></p>
+    <div class="roi roi-split rv" style="margin-top:26px">
+      <p class="lead-line">La otra cuenta ya la estás pagando, aunque no la veas:</p>
+      <p class="body">cada mes que la tarifa sigue como está, la subida de costes que no repercutiste <span class="hl">se cobra sola, en cada venta</span>. Cuánto es, exactamente, en tu caso — en euros — es una de las cosas que esta auditoría te pone delante.</p>
+      <p class="close">Lo que cobramos se compara contra esa fuga, no contra una promesa.</p>
     </div>
     <div class="rv center" style="margin-top:22px"><a href="#entrevista" class="btn">Quiero saber cuánto hay en juego en mi tarifa</a></div>
   </div>
