@@ -12,6 +12,7 @@
   PASO 9z (GATE D, 2026-09-03): «¿Para qué te sirve?» partido en pregunta + tres columnas con subrayado; mismas palabras (JR, ronda 40).
   PASO 9aa (GATE D, 2026-09-03): retirado el párrafo de intro de «Lo que cuesta» (JR, ronda 41).
   PASO 9ab (GATE D, 2026-09-03): caja «La otra cuenta…» partida en entrada + cuerpo + cierre con filete; mismas palabras (JR, ronda 42).
+  PASO 9ac (GATE D, 2026-09-03): cierre «Piénsalo así…» partido en frase + «te devuelve esa decisión:» + tres líneas con guion dorado; mismas palabras (JR, ronda 43).
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
   PASO 9n (GATE D, 2026-09-02): fuera «Precio base. Todos nuestros precios se comunican como base + IVA.» (el «+ IVA» ya va junto a la cifra; JR).
@@ -280,6 +281,10 @@
   .roi-split .body{color:var(--ink-2);font-size:1.02rem;line-height:1.6}
   .roi-split .close{margin-top:16px;padding-top:14px;border-top:2px solid rgba(240,195,26,.75);font-weight:800;font-size:1.08rem;color:var(--ink);line-height:1.35}
   @media(max-width:640px){.roi-split{padding:20px}}
+  .s-ink .devuelve{color:#fff;font-weight:700;font-size:1.12rem;margin:18px 0 8px}
+  .three-acts{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:8px;max-width:70ch}
+  .three-acts li{position:relative;padding-left:24px;color:var(--muted-dark);font-size:1.05rem;line-height:1.5}
+  .three-acts li::before{content:"";position:absolute;left:0;top:.78em;width:13px;height:2px;background:var(--gold);border-radius:2px}
 </style>
 <style>
   .why.four{grid-template-columns:repeat(4,1fr)}
@@ -603,7 +608,13 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
   <div class="wrap">
     <h2 class="big rv" style="max-width:24ch">Tus precios llevan años puestos. Va siendo hora de elegirlos.</h2>
     <div class="prose rv">
-      <p class="muted">Piénsalo así: cada venta que haces hoy lleva dentro una decisión de precio que tomaste hace años — o que tomó otro por ti: un proveedor, un competidor, un cliente apretando. Esta auditoría te devuelve esa decisión: calculamos lo que de verdad te deja cada producto, elegimos contigo los precios que deberías tener, y te entregamos el plan para llevarlos al mercado con seguridad.</p>
+      <p class="muted">Piénsalo así: cada venta que haces hoy lleva dentro una decisión de precio que tomaste hace años — o que tomó otro por ti: <span class="hl">un proveedor, un competidor, un cliente apretando</span>.</p>
+      <p class="devuelve">Esta auditoría te devuelve esa decisión:</p>
+      <ul class="three-acts">
+        <li>calculamos lo que de verdad te deja cada producto,</li>
+        <li>elegimos contigo los precios que deberías tener,</li>
+        <li>y te entregamos el plan para llevarlos al mercado con seguridad.</li>
+      </ul>
       <p style="color:#fff;font-weight:700">Tres meses. Tus números. Un sistema que se queda contigo.</p>
     </div>
     <form class="contact rv" id="cualificacion" action="#" method="post" novalidate>
