@@ -1,0 +1,452 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapa visual de amurai.es · páginas, recorridos, formularios y pagos</title>
+<style>
+:root{--ink:#191919;--ink2:#2E2E2E;--gold:#F0C31A;--cream:#F5EEC8;--paper:#F7F5F0;--line:rgba(25,25,25,.14)}
+*{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,Arial,sans-serif;font-size:15px;line-height:1.5}
+.wrap{max-width:1240px;margin:0 auto;padding:26px 20px 70px} h1{font-size:1.9rem;letter-spacing:-.02em;margin:0 0 4px} h2{font-size:1.25rem;margin:34px 0 8px;padding-top:8px;border-top:3px solid var(--gold)} h3{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#555;margin:18px 0 8px}
+.lead{max-width:80ch;color:var(--ink2)} .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;transition:.15s} .card.dark{background:#eee;border-style:dashed}
+.card.hl{outline:3px solid var(--gold);background:var(--cream)} .card.dim{opacity:.35}
+.cid{font-weight:800;font-size:1rem} .tp{font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:#666;margin-left:6px} .cn{font-weight:600;margin:2px 0} code{font-size:.82em;background:#f1efe8;padding:1px 5px;border-radius:4px} .cm{font-size:.82rem;color:#444;margin-top:3px} .cm a{color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px} .btns button{border:1px solid var(--ink);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-size:.85rem;cursor:pointer} .btns button.on{background:var(--ink);color:var(--gold)}
+.fl{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;overflow-x:auto} .fl svg{max-width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:.88rem;margin-top:10px} th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{background:var(--cream);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;margin:8px 0} .legend span{display:inline-flex;align-items:center;gap:6px} .sw{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--ink);display:inline-block}
+.box{background:#fff;border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:12px;padding:12px 16px;margin:12px 0;max-width:90ch}
+@media print{.btns{display:none} .fl[hidden]{display:block!important;page-break-inside:avoid;margin-bottom:12px}}
+</style></head><body><div class="wrap">
+<h1>Mapa visual de amurai.es</h1>
+<p class="lead">Todo el ecosistema en una página: las 29 páginas con su ID y su URL final, los 12 recorridos que las cruzan, las reglas de navegación por tipo de página, los sistemas externos y las redirecciones. <b>Pulsa un recorrido</b> para ver su flujograma y qué páginas participan (se iluminan; el resto se atenúa). Los ID son los mismos que en la guía de montaje y en la checklist.</p>
+<div class="box"><b>Cómo se usa.</b> 1) Elige un recorrido abajo y sigue el flujograma de arriba abajo: cada caja es una página (crema), un formulario (punteado claro), un sistema externo (negro) o un paso fuera de la web (blanco punteado). 2) Las cajas a la derecha con línea discontinua son ramas: lo que pasa si el usuario elige otra cosa. 3) Comprueba en el mapa qué páginas se iluminan: son las que tienen que estar enlazadas entre sí exactamente así.</div>
+
+<h2>1 · Recorridos</h2>
+<div class="btns" id="btns"><button data-j="R1" data-pages="H,T,W1,X1">R1 · Telaraña → Club → lección diaria</button><button data-j="R2" data-pages="L8,W1,X1">R2 · Escuela → lista de espera → Club → apertura</button><button data-j="R3" data-pages="L2,L2b,L9.1,L9.2,L9b.1,X2,X3">R3 · Masterclass grabada (y variante en directo)</button><button data-j="R4" data-pages="L3,L3b,L9.3,L9b.3,X1,X3">R4 · Taller de pago desde tráfico frío</button><button data-j="R5" data-pages="L1,L1b,X5">R5 · In-company como empresa</button><button data-j="R6" data-pages="L1,L3,L4,X5">R6 · Auditoría por web o prescripción</button><button data-j="R7" data-pages="L5,X5,X7">R7 · Gestor de colectivo → sesión gratuita</button><button data-j="R8" data-pages="L6,L9.4,L9b.4,X3">R8 · Sesión gratuita → tramo especial</button><button data-j="R9" data-pages="B,H,L3,W1,W2">R9 · El que explora</button><button data-j="R10" data-pages="L9b.1,W1,X1,X3">R10 · Después de comprar</button><button data-j="R11" data-pages="H">R11 · Llega por una URL antigua</button><button data-j="R12" data-pages="G5,X5">R12 · Derechos, desistimiento y cookies</button><button data-j="" data-pages="">Ver todo</button></div>
+<div class="legend"><span><i class="sw" style="background:#F5EEC8"></i> página</span><span><i class="sw" style="background:#F7F5F0;border-style:dashed"></i> formulario</span><span><i class="sw" style="background:#191919"></i> sistema externo</span><span><i class="sw" style="background:#fff;border-style:dashed"></i> fuera de la web</span><span><i class="sw" style="background:#fff;border-style:dashed"></i> a la derecha: rama</span></div>
+<div class="fl" id="fl-R1" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454" width="1000" height="454" role="img" aria-label="R1">
+<rect width="1000" height="454" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R1 · Telaraña → Club → lección diaria <tspan font-weight="400" opacity=".7">— entrada: Tráfico frío a la home</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Llega a la home</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">H</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Lee: qué es el Club y el regalo</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">H</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F7F5F0" stroke="#191919" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Rellena nombre y correo + 2 casillas</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">F01</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Alta en GetResponse con etiqueta club-alta-web</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<rect x="40" y="294" width="520" height="58" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="314" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Aterriza en /telarana-de-precios/ y recibe la</text>
+<text x="54" y="332" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Telaraña por correo</text>
+<text x="548" y="312" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">T</text>
+<rect x="40" y="378" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="398" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Desde mañana: la lección diaria</text>
+<text x="548" y="396" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="268" x2="300.0" y2="288" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,287 305.0,287 300.0,294" fill="#191919"/>
+<line x1="300.0" y1="352" x2="300.0" y2="372" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,371 305.0,371 300.0,378" fill="#191919"/>
+<line x1="560" y1="116.0" x2="600" y2="125.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="96" width="380" height="58" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="116" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Pulsa el menú → Escalera / Cómo lo hacemos /</text>
+<text x="612" y="134" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">blog (sitio abierto, permitido)</text>
+<text x="970" y="148" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">W1</text>
+</svg>
+</div><div class="fl" id="fl-R2" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 472" width="1000" height="472" role="img" aria-label="R2">
+<rect width="1000" height="472" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R2 · Escuela → lista de espera → Club → apertura <tspan font-weight="400" opacity=".7">— entrada: Correo del Club (entrada A) o bloque de la Escalera (entrada B)</tspan></text>
+<rect x="40" y="30" width="520" height="58" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Entrada B: Escalera, bloque ESCUELA → «Apúntame a la</text>
+<text x="54" y="68" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">lista de espera»</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">W1</text>
+<rect x="40" y="114" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="134" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Página de la lista de espera</text>
+<text x="548" y="132" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L8</text>
+<rect x="40" y="180" width="520" height="40" rx="10" fill="#F7F5F0" stroke="#191919" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="54" y="200" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Nombre, correo, 2 casillas → enviar</text>
+<text x="548" y="198" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">F04</text>
+<rect x="40" y="246" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="266" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">GetResponse: alta (si no estaba) + etiqueta</text>
+<text x="54" y="284" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">escuela-precios-lista-espera + campo entrada</text>
+<text x="548" y="264" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<rect x="40" y="330" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="350" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Confirmación en la misma página</text>
+<text x="548" y="348" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L8</text>
+<rect x="40" y="396" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="416" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Aviso de apertura desde el Club</text>
+<text x="548" y="414" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<line x1="300.0" y1="88" x2="300.0" y2="108" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,107 305.0,107 300.0,114" fill="#191919"/>
+<line x1="300.0" y1="154" x2="300.0" y2="174" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,173 305.0,173 300.0,180" fill="#191919"/>
+<line x1="300.0" y1="220" x2="300.0" y2="240" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,239 305.0,239 300.0,246" fill="#191919"/>
+<line x1="300.0" y1="304" x2="300.0" y2="324" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,323 305.0,323 300.0,330" fill="#191919"/>
+<line x1="300.0" y1="370" x2="300.0" y2="390" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,389 305.0,389 300.0,396" fill="#191919"/>
+<line x1="560" y1="59.0" x2="600" y2="68.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="30" width="380" height="76" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="50" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Entrada A: correo diario → enlace con</text>
+<text x="612" y="68" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">?via=club → mismo formulario, entrada=A, sin</text>
+<text x="612" y="86" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">duplicar</text>
+<text x="970" y="100" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">L8</text>
+</svg>
+</div><div class="fl" id="fl-R3" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 472" width="1000" height="472" role="img" aria-label="R3">
+<rect width="1000" height="472" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R3 · Masterclass grabada (y variante en directo) <tspan font-weight="400" opacity=".7">— entrada: Correo del Club, Escalera o búsqueda</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing de la masterclass</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L2</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Quiero la masterclass grabada»</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L2</text>
+<rect x="40" y="162" width="520" height="58" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Página de pedido: 82,64 € + IVA = 100 € · 3 casillas</text>
+<text x="54" y="200" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">· casilla opcional del Club</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9.1</text>
+<rect x="40" y="246" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="266" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Enlace de pago de Stripe (correo ya puesto)</text>
+<text x="548" y="264" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X3</text>
+<rect x="40" y="312" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="332" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Página de gracias: el acceso llega por correo</text>
+<text x="548" y="330" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9b.1</text>
+<rect x="40" y="378" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="398" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">AMURAI etiqueta cliente-masterclass y el comprador</text>
+<text x="54" y="416" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">recibe su acceso privado</text>
+<text x="548" y="396" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X2</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="220" x2="300.0" y2="240" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,239 305.0,239 300.0,246" fill="#191919"/>
+<line x1="300.0" y1="286" x2="300.0" y2="306" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,305 305.0,305 300.0,312" fill="#191919"/>
+<line x1="300.0" y1="352" x2="300.0" y2="372" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,371 305.0,371 300.0,378" fill="#191919"/>
+<line x1="560" y1="50.0" x2="600" y2="68.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="30" width="380" height="76" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="50" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Desde la Escalera: «Próximas ediciones en</text>
+<text x="612" y="68" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">directo» → estado «no»: avísame → GetResponse</text>
+<text x="612" y="86" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">(masterclass-directo-interesado) · estado</text>
+<text x="970" y="100" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">L2b · L9.2</text>
+</svg>
+</div><div class="fl" id="fl-R4" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" role="img" aria-label="R4">
+<rect width="1000" height="520" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R4 · Taller de pago desde tráfico frío <tspan font-weight="400" opacity=".7">— entrada: Búsqueda, anuncio, redes o Escalera</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing del taller (servicio, sin fecha ni ciudad)</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L3</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Ver próximas ediciones y ciudades»</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L3</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Listado de ediciones + lista de espera por ciudad</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L3b</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Reservar» en una edición</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L3b</text>
+<rect x="40" y="294" width="520" height="58" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="314" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Pedido: 390 € + IVA = 471,90 € · edición · 2</text>
+<text x="54" y="332" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">casillas</text>
+<text x="548" y="312" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9.3</text>
+<rect x="40" y="378" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="398" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Enlace de pago de Stripe de la edición (25 plazas)</text>
+<text x="548" y="396" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X3</text>
+<rect x="40" y="444" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="464" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Gracias: lugar, hora, qué traer</text>
+<text x="548" y="462" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9b.3</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="268" x2="300.0" y2="288" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,287 305.0,287 300.0,294" fill="#191919"/>
+<line x1="300.0" y1="352" x2="300.0" y2="372" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,371 305.0,371 300.0,378" fill="#191919"/>
+<line x1="300.0" y1="418" x2="300.0" y2="438" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,437 305.0,437 300.0,444" fill="#191919"/>
+<line x1="560" y1="182.0" x2="600" y2="200.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="162" width="380" height="76" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="182" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Su ciudad no está → «Avísame cuando haya</text>
+<text x="612" y="200" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">taller en mi ciudad» → GetResponse</text>
+<text x="612" y="218" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">(taller-presencial-lista-espera + ciudad) →</text>
+<text x="970" y="232" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">F06 · X1</text>
+</svg>
+</div><div class="fl" id="fl-R5" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454" width="1000" height="454" role="img" aria-label="R5">
+<rect width="1000" height="454" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R5 · In-company como empresa <tspan font-weight="400" opacity=".7">— entrada: Prescripción, Escalera, ¿Cómo lo hacemos? o búsqueda</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing in-company</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L1</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Quiero el taller en mi empresa»</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L1</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Solicitud de información (5 campos)</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L1b</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Llega al buzón antonio.molina@amurai.es</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X5</text>
+<rect x="40" y="294" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="314" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Confirmación: «Te escribimos en 48 horas laborables»</text>
+<text x="548" y="312" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L1b</text>
+<rect x="40" y="360" width="520" height="58" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="380" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Fuera de la web: reunión previa → propuesta →</text>
+<text x="54" y="398" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">transferencia o factura de Stripe</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="268" x2="300.0" y2="288" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,287 305.0,287 300.0,294" fill="#191919"/>
+<line x1="300.0" y1="334" x2="300.0" y2="354" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,353 305.0,353 300.0,360" fill="#191919"/>
+</svg>
+</div><div class="fl" id="fl-R6" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 436" width="1000" height="436" role="img" aria-label="R6">
+<rect width="1000" height="436" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R6 · Auditoría por web o prescripción <tspan font-weight="400" opacity=".7">— entrada: Escalera, ¿Cómo lo hacemos? o enlace enviado a mano</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing de la auditoría</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L4</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Quiero saber cuánto hay en juego en mi tarifa»</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L4</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F7F5F0" stroke="#191919" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Formulario de entrevista en la misma página</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">F07</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Buzón antonio.molina@amurai.es</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X5</text>
+<rect x="40" y="294" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="314" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Confirmación en la página</text>
+<text x="548" y="312" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L4</text>
+<rect x="40" y="360" width="520" height="40" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="380" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Fuera de la web: entrevista → propuesta → contrato</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="268" x2="300.0" y2="288" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,287 305.0,287 300.0,294" fill="#191919"/>
+<line x1="300.0" y1="334" x2="300.0" y2="354" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,353 305.0,353 300.0,360" fill="#191919"/>
+<line x1="560" y1="50.0" x2="600" y2="59.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="30" width="380" height="58" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="50" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">«¿Vienes de nuestros talleres?» → landing del</text>
+<text x="612" y="68" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">taller o del in-company</text>
+<text x="970" y="82" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">L3 · L1</text>
+</svg>
+</div><div class="fl" id="fl-R7" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 472" width="1000" height="472" role="img" aria-label="R7">
+<rect width="1000" height="472" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R7 · Gestor de colectivo → sesión gratuita <tspan font-weight="400" opacity=".7">— entrada: Escalera, bloque EVENTOS, o prescripción</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing para colectivos</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L5</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F7F5F0" stroke="#191919" stroke-width="1.5" stroke-dasharray="2 2"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Acordar una fecha» → formulario en la página</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">F08</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Buzón antonio.molina@amurai.es</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X5</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Confirmación en la página</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L5</text>
+<rect x="40" y="294" width="520" height="58" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="314" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Fuera de la web: llamada → fecha → sesión de 2 h en</text>
+<text x="54" y="332" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">su sede</text>
+<rect x="40" y="378" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="398" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">En sala: registro por QR → los asistentes entran en</text>
+<text x="54" y="416" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">el recorrido R8</text>
+<text x="548" y="396" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X7</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="268" x2="300.0" y2="288" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,287 305.0,287 300.0,294" fill="#191919"/>
+<line x1="300.0" y1="352" x2="300.0" y2="372" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,371 305.0,371 300.0,378" fill="#191919"/>
+</svg>
+</div><div class="fl" id="fl-R8" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 454" width="1000" height="454" role="img" aria-label="R8">
+<rect width="1000" height="454" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R8 · Sesión gratuita → tramo especial <tspan font-weight="400" opacity=".7">— entrada: Enlace privado enviado a los asistentes (nunca desde la web)</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Landing del tramo especial (no pública)</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L6</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">«Reservar mi plaza · 290 € + IVA»</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L6</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Pedido: 290 € + IVA = 350,90 €</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9.4</text>
+<rect x="40" y="228" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Enlace de Stripe con fecha de desactivación = fecha</text>
+<text x="54" y="266" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">límite</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X3</text>
+<rect x="40" y="312" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="332" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Gracias</text>
+<text x="548" y="330" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9b.4</text>
+<rect x="40" y="378" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="398" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Al cerrar la ventana: la página se desactiva</text>
+<text x="548" y="396" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L6</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="300.0" y1="286" x2="300.0" y2="306" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,305 305.0,305 300.0,312" fill="#191919"/>
+<line x1="300.0" y1="352" x2="300.0" y2="372" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,371 305.0,371 300.0,378" fill="#191919"/>
+</svg>
+</div><div class="fl" id="fl-R9" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 304" width="1000" height="304" role="img" aria-label="R9">
+<rect width="1000" height="304" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R9 · El que explora <tspan font-weight="400" opacity=".7">— entrada: Home → menú</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Home</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">H</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Menú: Escalera de servicios</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">W1</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Bloque → landing del servicio</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L3</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="248" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Desde una landing, la única vuelta es el logo → home</text>
+<text x="548" y="246" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">H</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="560" y1="116.0" x2="600" y2="125.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="96" width="380" height="58" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="116" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Menú: ¿Cómo lo hacemos? → Formamos ·</text>
+<text x="612" y="134" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Implantamos · Ejecutamos → landing</text>
+<text x="970" y="148" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">W2</text>
+<line x1="560" y1="116.0" x2="600" y2="125.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="96" width="380" height="58" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="116" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">Menú: blog (2022) → el menú lleva de vuelta al</text>
+<text x="612" y="134" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">nicho</text>
+<text x="970" y="148" font-size="11" text-anchor="end" fill="#191919" opacity=".7" font-family="Inter,system-ui,Arial,sans-serif">B</text>
+</svg>
+</div><div class="fl" id="fl-R10" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 406" width="1000" height="406" role="img" aria-label="R10">
+<rect width="1000" height="406" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R10 · Después de comprar <tspan font-weight="400" opacity=".7">— entrada: Cualquier pago en Stripe</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="50" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Pago completado en Stripe</text>
+<text x="548" y="48" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X3</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Gracias: qué pasa ahora</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">L9b.1</text>
+<rect x="40" y="162" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">AMURAI etiqueta cliente-&lt;servicio&gt; en GetResponse (a</text>
+<text x="54" y="200" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">mano)</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<rect x="40" y="246" width="520" height="58" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="266" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Si marcó la casilla opcional del Club: alta +</text>
+<text x="54" y="284" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif">lección diaria</text>
+<text x="548" y="264" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X1</text>
+<rect x="40" y="330" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="350" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Siguiente escalón declarado en cada landing</text>
+<text x="548" y="348" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">W1</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="220" x2="300.0" y2="240" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,239 305.0,239 300.0,246" fill="#191919"/>
+<line x1="300.0" y1="304" x2="300.0" y2="324" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,323 305.0,323 300.0,330" fill="#191919"/>
+</svg>
+</div><div class="fl" id="fl-R11" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 256" width="1000" height="256" role="img" aria-label="R11">
+<rect width="1000" height="256" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R11 · Llega por una URL antigua <tspan font-weight="400" opacity=".7">— entrada: Marcador, enlace externo o resultado de Google</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">URL antigua (10 casos)</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Redirección 301</text>
+<rect x="40" y="162" width="520" height="58" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Home · Escalera · Escalera#escuela · blog ·</text>
+<text x="54" y="200" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">solicitud in-company</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">H</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+</svg>
+</div><div class="fl" id="fl-R12" hidden><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 304" width="1000" height="304" role="img" aria-label="R12">
+<rect width="1000" height="304" fill="#fff"/>
+<text x="40" y="18" font-size="13" font-weight="700" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">R12 · Derechos, desistimiento y cookies <tspan font-weight="400" opacity=".7">— entrada: Pie de cualquier página</tspan></text>
+<rect x="40" y="30" width="520" height="40" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="50" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Pie: seis enlaces legales + «Configurar cookies»</text>
+<rect x="40" y="96" width="520" height="40" rx="10" fill="#F5EEC8" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="116" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Página de desistimiento → formulario</text>
+<text x="548" y="114" font-size="11" text-anchor="end" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">G5</text>
+<rect x="40" y="162" width="520" height="40" rx="10" fill="#191919" stroke="#191919" stroke-width="1.5"/>
+<text x="54" y="182" font-size="14" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Buzón + acuse automático</text>
+<text x="548" y="180" font-size="11" text-anchor="end" fill="#F0C31A" font-family="Inter,system-ui,Arial,sans-serif" opacity=".8">X5</text>
+<rect x="40" y="228" width="520" height="40" rx="10" fill="#ffffff" stroke="#191919" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="54" y="248" font-size="14" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif" font-weight="700">Reembolso en 14 días (fuera de la web)</text>
+<line x1="300.0" y1="70" x2="300.0" y2="90" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,89 305.0,89 300.0,96" fill="#191919"/>
+<line x1="300.0" y1="136" x2="300.0" y2="156" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,155 305.0,155 300.0,162" fill="#191919"/>
+<line x1="300.0" y1="202" x2="300.0" y2="222" stroke="#191919" stroke-width="1.5"/>
+<polygon points="295.0,221 305.0,221 300.0,228" fill="#191919"/>
+<line x1="560" y1="50.0" x2="600" y2="59.0" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<rect x="600" y="30" width="380" height="58" rx="10" fill="#fff" stroke="#191919" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="612" y="50" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">«Configurar cookies» → panel del plugin (por</text>
+<text x="612" y="68" font-size="13" fill="#191919" font-family="Inter,system-ui,Arial,sans-serif">finalidad)</text>
+</svg>
+</div>
+<p class="lead" id="jhint">Ningún recorrido seleccionado: se muestran todas las páginas.</p>
+
+<h2>2 · Las páginas</h2>
+<h3>SITIO · navegación abierta</h3><div class="grid"><div class="card " data-id="H" data-tipo="SITIO"><div class="cid">H <span class="tp">SITIO · ABIERTA</span></div><div class="cn">CLUB AMURAI (home)</div><code>/</code><div class="cm"><b>index:</b> index · <b>menú:</b> sí · <b>form:</b> F01a, F01b, F01c</div><div class="cm"><b>→</b> W1 · W2 · B · T</div><div class="cm"><a href="piezas/07_club/landing_club_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="W1" data-tipo="SITIO"><div class="cid">W1 <span class="tp">SITIO · ABIERTA</span></div><div class="cn">ESCALERA DE SERVICIOS</div><code>/escalera-de-servicios/</code><div class="cm"><b>index:</b> index · <b>menú:</b> sí · <b>form:</b> —</div><div class="cm"><b>→</b> H · L8 · L2 · L2b · L3 · L3b · L1 · L4 · L5</div><div class="cm"><a href="web/servicios_amurai_es_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="W2" data-tipo="SITIO"><div class="cid">W2 <span class="tp">SITIO · ABIERTA</span></div><div class="cn">¿Cómo lo hacemos?</div><code>/como-lo-hacemos/</code><div class="cm"><b>index:</b> index · <b>menú:</b> sí · <b>form:</b> F03a, F03b</div><div class="cm"><b>→</b> W1 · H · L2 · L3 · L8 · L1 · L4</div><div class="cm"><a href="web/como-lo-hacemos_amurai_es_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="B" data-tipo="MANTENIDA"><div class="cid">B <span class="tp">MANTENIDA · ABIERTA</span></div><div class="cn">El blog del vendedor Samurai (+ 12 entradas)</div><code>/el-blog-del-vendedor-samurai/</code><div class="cm"><b>index:</b> index · <b>menú:</b> sí · <b>form:</b> —</div><div class="cm"><b>→</b> —</div><div class="cm">sin maqueta</div></div><div class="card " data-id="T" data-tipo="MANTENIDA"><div class="cid">T <span class="tp">MANTENIDA · ABIERTA</span></div><div class="cn">Entrega de La Telaraña de Precios</div><code>/telarana-de-precios/</code><div class="cm"><b>index:</b> noindex · <b>menú:</b> sí · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm">sin maqueta</div></div><div class="card " data-id="G6" data-tipo="NUEVA"><div class="cid">G6 <span class="tp">NUEVA · ABIERTA</span></div><div class="cn">Página 404 con marca</div><code>/404 (página de error)</code><div class="cm"><b>index:</b> — · <b>menú:</b> sí · <b>form:</b> —</div><div class="cm"><b>→</b> H · W1</div><div class="cm">sin maqueta</div></div></div><h3>LANDINGS · navegación cerrada</h3><div class="grid"><div class="card " data-id="L1" data-tipo="LANDING"><div class="cid">L1 <span class="tp">LANDING · CERRADA</span></div><div class="cn">Taller in-company</div><code>/taller-in-company/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F11a</div><div class="cm"><b>→</b> L1b · H</div><div class="cm"><a href="piezas/01_incompany/landing_incompany_AMURAI_v2.1.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L2" data-tipo="LANDING"><div class="cid">L2 <span class="tp">LANDING · CERRADA</span></div><div class="cn">Masterclass de Precios (grabada)</div><code>/masterclass-de-precios/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F11b</div><div class="cm"><b>→</b> L9.1 · L3 · L1 · H</div><div class="cm"><a href="piezas/02_masterclass/landing_masterclass_AMURAI_v1.1.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L2b" data-tipo="LANDING"><div class="cid">L2b <span class="tp">LANDING · CERRADA</span></div><div class="cn">Masterclass · próximas ediciones en directo</div><code>/masterclass-de-precios/en-directo/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F05</div><div class="cm"><b>→</b> L2 · L9.2 · H</div><div class="cm"><a href="piezas/02_masterclass/masterclass_directo_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L3" data-tipo="LANDING"><div class="cid">L3 <span class="tp">LANDING · CERRADA</span></div><div class="cn">Taller presencial · Tu Sistema de Precios (servicio)</div><code>/taller-tu-sistema-de-precios/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F11c</div><div class="cm"><b>→</b> L3b · H</div><div class="cm"><a href="piezas/03_taller_presencial/landing_taller_presencial_AMURAI_v1.2.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L3b" data-tipo="LANDING"><div class="cid">L3b <span class="tp">LANDING · CERRADA</span></div><div class="cn">Taller · próximas ediciones y lista de espera por ciudad</div><code>/taller-tu-sistema-de-precios/ediciones/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F06</div><div class="cm"><b>→</b> L3 · L9.3 · H</div><div class="cm"><a href="piezas/03_taller_presencial/taller_ediciones_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L4" data-tipo="LANDING"><div class="cid">L4 <span class="tp">LANDING · CERRADA</span></div><div class="cn">Auditoría de precios</div><code>/auditoria-de-precios/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F07</div><div class="cm"><b>→</b> L3 · L1 · H</div><div class="cm"><a href="piezas/04_auditoria/landing_auditoria_precios_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L5" data-tipo="LANDING"><div class="cid">L5 <span class="tp">LANDING · CERRADA</span></div><div class="cn">Sesión formativa para colectivos</div><code>/eventos-para-colectivos/</code><div class="cm"><b>index:</b> index · <b>menú:</b> no · <b>form:</b> F08</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/05_eventos/landing_colectivos_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card dark" data-id="L6" data-tipo="NO PUBLICA"><div class="cid">L6 <span class="tp">NO PUBLICA · CERRADA</span></div><div class="cn">Tramo especial del taller (asistentes a la sesión gratuita)</div><code>[ruta privada, una por edición]</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> L9.4 · H</div><div class="cm"><a href="piezas/06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html" target="_blank">abrir maqueta</a></div></div></div><h3>FORMULARIOS, PEDIDO Y GRACIAS</h3><div class="grid"><div class="card " data-id="L1b" data-tipo="FORMULARIO"><div class="cid">L1b <span class="tp">FORMULARIO · CERRADA</span></div><div class="cn">Solicitud de información del in-company</div><code>/taller-in-company/solicitud/</code><div class="cm"><b>index:</b> noindex · <b>menú:</b> no · <b>form:</b> F09</div><div class="cm"><b>→</b> L1 · H</div><div class="cm"><a href="piezas/01_incompany/solicitud_incompany_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L8" data-tipo="FORMULARIO"><div class="cid">L8 <span class="tp">FORMULARIO · CERRADA</span></div><div class="cn">Escuela de Precios · lista de espera</div><code>/escuela-de-precios/lista-de-espera/</code><div class="cm"><b>index:</b> noindex · <b>menú:</b> no · <b>form:</b> F04</div><div class="cm"><b>→</b> W1 · H</div><div class="cm"><a href="piezas/08_escuela/lista_espera_escuela_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9.1" data-tipo="PEDIDO"><div class="cid">L9.1 <span class="tp">PEDIDO · CERRADA</span></div><div class="cn">Pedido · masterclass grabada</div><code>/masterclass-de-precios/pedido/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> F13</div><div class="cm"><b>→</b> L9b.1 · L2</div><div class="cm"><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=masterclass" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9.2" data-tipo="PEDIDO"><div class="cid">L9.2 <span class="tp">PEDIDO · CERRADA</span></div><div class="cn">Pedido · masterclass en directo</div><code>/masterclass-de-precios/en-directo/pedido/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> F14</div><div class="cm"><b>→</b> L9b.2 · L2b</div><div class="cm"><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=directo" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9.3" data-tipo="PEDIDO"><div class="cid">L9.3 <span class="tp">PEDIDO · CERRADA</span></div><div class="cn">Pedido · taller presencial (por edición)</div><code>/taller-tu-sistema-de-precios/pedido/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> F15</div><div class="cm"><b>→</b> L9b.3 · L3b</div><div class="cm"><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=taller&edicion=granada-2026-09-25" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9.4" data-tipo="PEDIDO"><div class="cid">L9.4 <span class="tp">PEDIDO · CERRADA</span></div><div class="cn">Pedido · tramo especial</div><code>[ruta privada]/pedido/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> F16</div><div class="cm"><b>→</b> L9b.4 · L6</div><div class="cm"><a href="piezas/10_pedido/pedido_AMURAI_v1.0.html?producto=tramo" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9b.1" data-tipo="GRACIAS"><div class="cid">L9b.1 <span class="tp">GRACIAS · CERRADA</span></div><div class="cn">Gracias · masterclass</div><code>/masterclass-de-precios/gracias/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/10_pedido/gracias_AMURAI_v1.0.html?producto=masterclass" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9b.2" data-tipo="GRACIAS"><div class="cid">L9b.2 <span class="tp">GRACIAS · CERRADA</span></div><div class="cn">Gracias · directo</div><code>/masterclass-de-precios/en-directo/gracias/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/10_pedido/gracias_AMURAI_v1.0.html?producto=directo" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9b.3" data-tipo="GRACIAS"><div class="cid">L9b.3 <span class="tp">GRACIAS · CERRADA</span></div><div class="cn">Gracias · taller</div><code>/taller-tu-sistema-de-precios/gracias/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/10_pedido/gracias_AMURAI_v1.0.html?producto=taller" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="L9b.4" data-tipo="GRACIAS"><div class="cid">L9b.4 <span class="tp">GRACIAS · CERRADA</span></div><div class="cn">Gracias · tramo especial</div><code>[ruta privada]/gracias/</code><div class="cm"><b>index:</b> noindex,nofollow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/10_pedido/gracias_AMURAI_v1.0.html?producto=tramo" target="_blank">abrir maqueta</a></div></div></div><h3>LEGAL</h3><div class="grid"><div class="card " data-id="G1" data-tipo="LEGAL"><div class="cid">G1 <span class="tp">LEGAL · CERRADA</span></div><div class="cn">Aviso legal</div><code>/aviso-legal/</code><div class="cm"><b>index:</b> noindex,follow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/09_legal/aviso-legal_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="G2" data-tipo="LEGAL"><div class="cid">G2 <span class="tp">LEGAL · CERRADA</span></div><div class="cn">Política de privacidad</div><code>/politica-privacidad/</code><div class="cm"><b>index:</b> noindex,follow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/09_legal/politica-privacidad_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="G3" data-tipo="LEGAL"><div class="cid">G3 <span class="tp">LEGAL · CERRADA</span></div><div class="cn">Política de cookies</div><code>/politica-de-cookies/</code><div class="cm"><b>index:</b> noindex,follow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/09_legal/politica-cookies_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="G4" data-tipo="LEGAL"><div class="cid">G4 <span class="tp">LEGAL · CERRADA</span></div><div class="cn">Condiciones generales de contratación</div><code>/condiciones-de-contratacion/</code><div class="cm"><b>index:</b> noindex,follow · <b>menú:</b> no · <b>form:</b> —</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/09_legal/condiciones-contratacion_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div><div class="card " data-id="G5" data-tipo="LEGAL"><div class="cid">G5 <span class="tp">LEGAL · CERRADA</span></div><div class="cn">Derecho de desistimiento</div><code>/desistimiento/</code><div class="cm"><b>index:</b> noindex,follow · <b>menú:</b> no · <b>form:</b> F12</div><div class="cm"><b>→</b> H</div><div class="cm"><a href="piezas/09_legal/desistimiento_AMURAI_v1.0.html" target="_blank">abrir maqueta</a></div></div></div>
+
+<h2>3 · Reglas de navegación por tipo de página</h2>
+<table><thead><tr><th>Regla</th><th>SITIO (H, W1, W2, blog, Telaraña, 404)</th><th>LANDING (L1-L6)</th><th>FORMULARIO (L1b, L8) y PEDIDO/GRACIAS</th><th>LEGAL (G1-G5)</th><th>NO PÚBLICA (tramo)</th></tr></thead><tbody><tr><td>Menú global</td><td>Sí: Club Amurai · Escalera de servicios · ¿Cómo lo hacemos? · El blog del vendedor Samurai. En móvil, icono ☰ hasta 1080 px</td><td>No</td><td>No</td><td>No</td><td>No</td></tr><tr><td>Logo</td><td>→ /</td><td>→ /</td><td>→ /</td><td>→ /</td><td>→ /</td></tr><tr><td>CTA de cabecera</td><td>«Entrar en el Club» → formulario</td><td>El CTA único de la landing</td><td>Ninguno</td><td>Ninguno</td><td>El CTA único</td></tr><tr><td>Salidas permitidas</td><td>Todas las del menú y el pie</td><td>Solo su destino de conversión, su página hija, los cross-links declarados y el pie legal</td><td>«← Volver» a la landing madre o logo</td><td>«← Volver a amurai.es» + pie</td><td>Ninguna salvo el pie legal</td></tr><tr><td>Pie</td><td>Logo · lema · buzón · seis enlaces legales · «Configurar cookies»</td><td>Pie mínimo: seis enlaces legales + «Configurar cookies» + logo + buzón</td><td>Ídem mínimo</td><td>Ídem</td><td>Ídem</td></tr><tr><td>Indexación</td><td>index (la Telaraña: noindex)</td><td>index (tramo: noindex,nofollow)</td><td>noindex</td><td>noindex,follow</td><td>noindex,nofollow</td></tr><tr><td>Enlaces fuera de amurai.es</td><td>Solo legales y mailto:</td><td>Ninguno salvo el enlace de pago y mailto:</td><td>Ninguno</td><td>Los del texto legal</td><td>Solo el enlace de pago</td></tr><tr><td>CTA fijo en móvil</td><td>Sí en la home: barra inferior «Entrar en el Club»</td><td>Sí: barra inferior con el CTA único; aparece al pasar el hero, desaparece en la conversión y en el pie</td><td>No</td><td>No</td><td>Sí</td></tr><tr><td>Después de convertir</td><td>/telarana-de-precios/</td><td>Página de pedido o confirmación en la misma página</td><td>Confirmación en la misma página</td><td>Confirmación + acuse</td><td>Página de pedido</td></tr></tbody></table>
+<div class="box"><b>Tres reglas de oro:</b> una landing tiene <b>un</b> destino; una página de sitio tiene <b>todo</b> el menú; <b>nadie</b> llega a una página sin saber cómo volver (logo → home) ni sale de una conversión sin saber qué pasa después.</div>
+
+<h2>4 · Sistemas externos por los que pasa el usuario</h2>
+<table><thead><tr><th>ID</th><th>Sistema</th><th>Qué hace</th><th>Lo gobierna</th><th>Qué hacéis vosotros</th></tr></thead><tbody><tr><td><b>X1</b></td><td>GetResponse</td><td>La lista del Club Amurai: recibe todas las altas y listas de espera, aplica etiquetas y campos, envía la bienvenida con la Telaraña y la lección diaria</td><td>AMURAI (Antonio Molina)</td><td>Conectar cada formulario a la lista con su etiqueta, campos y registro de consentimiento</td></tr><tr><td><b>X2</b></td><td>Acceso privado a la masterclass (provisional)</td><td>Donde el comprador ve la masterclass grabada. Solo entra quien ha comprado. Solución temporal hasta la Escuela de Precios</td><td>AMURAI opera; CMYK propone y monta</td><td>Proponer e implementar la solución de acceso (08_PAGO/REQUISITO_ACCESO_MASTERCLASS.md)</td></tr><tr><td><b>X3</b></td><td>Stripe (cuenta existente de la sociedad)</td><td>Cobra masterclass, directo, taller y tramo con el IVA visible y las aceptaciones legales registradas; un proceso por producto o edición</td><td>AMURAI controla la cuenta</td><td>Proponer la solución técnica de pago (08_PAGO/) y montarla tras la validación</td></tr><tr><td><b>X5</b></td><td>Buzón antonio.molina@amurai.es</td><td>Recibe solicitudes del in-company, entrevistas de auditoría, contactos de colectivos, desistimientos y derechos</td><td>AMURAI</td><td>Destino de los formularios F07, F08, F09 y F12, con acuse en el desistimiento</td></tr><tr><td><b>X7</b></td><td>Registro en sala (QR) de las sesiones gratuitas</td><td>Fuera de la web. Es la puerta al tramo especial</td><td>AMURAI</td><td>Nada</td></tr></tbody></table>
+
+<h2>5 · Redirecciones 301 (ninguna URL que estuvo publicada acaba en 404)</h2>
+<table><thead><tr><th>De</th><th>A</th><th>Motivo</th></tr></thead><tbody><tr><td><code>/inicio/</code></td><td><code>/</code></td><td>Home duplicada</td></tr><tr><td><code>/nueva-pagina-de-inicio/</code></td><td><code>/</code></td><td>Home duplicada</td></tr><tr><td><code>/sobre-nosotros/</code></td><td><code>/escalera-de-servicios/</code></td><td>Sustituida por la Escalera</td></tr><tr><td><code>/suscribete/</code></td><td><code>/</code></td><td>Alta antigua; el alta vive en la home</td></tr><tr><td><code>/sistema-facc/</code></td><td><code>/escalera-de-servicios/</code></td><td>Fuera del catálogo</td></tr><tr><td><code>/programa-entrena-empresa/</code></td><td><code>/escalera-de-servicios/</code></td><td>Fuera del catálogo</td></tr><tr><td><code>/blog/</code></td><td><code>/el-blog-del-vendedor-samurai/</code></td><td>Hoy responde 404</td></tr><tr><td><code>/formulario-de-solicitud/</code></td><td><code>/taller-in-company/solicitud/</code></td><td>Sustituido por la solicitud del in-company</td></tr><tr><td><code>/5-pasos-beneficios/</code></td><td><code>/escalera-de-servicios/#escuela</code></td><td>Su contenido pasará a la Escuela de Precios</td></tr><tr><td><code>/contacto/</code></td><td><code>/</code></td><td>Sin página de contacto; el buzón va en el pie</td></tr><tr><td><code>/escuela-de-precios/</code></td><td><code>/escalera-de-servicios/#escuela</code></td><td>URL futura de la Escuela: mientras no exista, lleva a su escalón (evita el 404 desde enlaces externos)</td></tr></tbody></table>
+
+<p style="color:#666;font-size:.85rem;margin-top:30px">Paquete de entrega · AMURAI → CMYK Marketing · 2026-09-04 · Este fichero es autocontenido: se abre con cualquier navegador sin conexión.</p>
+</div>
+<script>
+(function(){
+  var btns=document.querySelectorAll('#btns button'),cards=document.querySelectorAll('.card'),fls=document.querySelectorAll('.fl'),hint=document.getElementById('jhint');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('on')}); b.classList.add('on');
+    var j=b.getAttribute('data-j'), pages=b.getAttribute('data-pages').split(',').filter(Boolean);
+    fls.forEach(function(f){f.hidden=(f.id!=='fl-'+j)});
+    cards.forEach(function(c){c.classList.remove('hl','dim'); if(pages.length){ if(pages.indexOf(c.getAttribute('data-id'))>=0) c.classList.add('hl'); else c.classList.add('dim'); }});
+    hint.textContent = j ? ('Recorrido '+j+': participan '+pages.join(', ')+'.') : 'Ningún recorrido seleccionado: se muestran todas las páginas.';
+    if(j) document.getElementById('fl-'+j).scrollIntoView({behavior:'smooth',block:'nearest'});
+  })});
+})();
+</script></body></html>
