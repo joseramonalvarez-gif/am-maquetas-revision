@@ -272,6 +272,8 @@
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
+/* logotipo: nunca deformado */
+header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:auto!important;max-width:none}
 </style>
 <style>
   .big-idea{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;max-width:22ch}

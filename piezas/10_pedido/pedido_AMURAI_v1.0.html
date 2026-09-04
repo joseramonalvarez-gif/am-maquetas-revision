@@ -33,7 +33,7 @@
   body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,Arial,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column}
   header{border-bottom:1px solid var(--line);background:rgba(247,245,240,.86)}
   header .bar{max-width:1120px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between}
-  header img{height:26px;display:block}
+  header img{height:26px;width:auto;display:block}
   header a.back{font-size:.92rem;color:var(--muted);text-decoration:none;padding:12px 0;display:inline-block}
   main{flex:1;padding:56px 24px}
   .box{max-width:680px;margin:0 auto;width:100%}
@@ -104,6 +104,8 @@ section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;h
 p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
 .stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
 .skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
+/* logotipo: nunca deformado */
+header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:auto!important;max-width:none}
 </style>
 </head>
 <body>
