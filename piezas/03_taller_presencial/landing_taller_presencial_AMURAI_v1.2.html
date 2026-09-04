@@ -12,6 +12,7 @@
   PASO 9ad (Antonio · bloque A, 2026-09-03): bios unificadas (versión in-company), caja del grupo bajo las bios, foto central de la galería sin caras ajenas.
   PASO 9af (Antonio · B11, 2026-09-03): botón del formulario de la Telaraña: «Descarga LA TELARAÑA DE PRECIOS».
   PASO 9ag (Antonio · B12, 2026-09-03): bio de JR reescrita (V2, con Redexis, Holaluz y Santander), por JR.
+  PASO 9ah (JR, 2026-09-03): caja del grupo con las tres marcas (D-114).
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
   PASO 9h (GATE D, 2026-09-02): fichas de datos con icono.
@@ -276,6 +277,11 @@
   .trust.callout{background:rgba(240,195,26,.16);border:1px solid rgba(240,195,26,.5);border-left:5px solid var(--gold);border-radius:12px;padding:16px 18px;font-size:1.08rem;font-weight:600;color:var(--ink);max-width:62ch;line-height:1.5}
   .group-note{margin-top:24px;background:var(--ink);color:#f4f2ec;border-radius:14px;padding:20px 24px;font-size:1.08rem;font-weight:600;line-height:1.5}
   .group-note b{color:var(--gold);font-weight:800}
+  .group-note .gn-lead{margin:0 0 12px}
+  .group-note .gn-list{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:8px}
+  .group-note .gn-list li{position:relative;padding-left:18px;font-weight:500;font-size:1rem;color:#f4f2ec}
+  .group-note .gn-list li::before{content:"";position:absolute;left:0;top:.72em;width:10px;height:2px;background:var(--gold);border-radius:2px}
+  .group-note .gn-close{margin:0;font-weight:500;font-size:1rem;color:var(--muted-dark)}
 </style>
 <style>
   .diag{display:grid;grid-template-columns:1fr 1fr;gap:14px 30px;margin-top:26px;list-style:none;counter-reset:q}
@@ -502,7 +508,15 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
         </div>
       </div>
     </div>
-    <div class="group-note rv"><b>AMURAI forma parte de un grupo empresarial:</b> despachos, formación, tecnología e inteligencia artificial, servicios profesionales, intermediación e inversión.</div>
+    <div class="group-note rv">
+      <p class="gn-lead"><b>AMURAI no va sola.</b> Forma parte de un grupo de empresas dirigido por empresarios que aplican en sus negocios lo que enseñan en el tuyo:</p>
+      <ul class="gn-list">
+        <li><b>Nevada &amp; Amurai</b> · el departamento externo de la pyme: fiscal, laboral, mercantil, dirección financiera externalizada y estrategia de negocio, bajo una sola marca.</li>
+        <li><b>Amurai</b> · la consultora de precios: el sistema, los talleres y la auditoría que convierten tu tarifa en margen.</li>
+        <li><b>Data Goal</b> · datos e inteligencia artificial para que decidas con números, no con intuición.</li>
+      </ul>
+      <p class="gn-close">Y una escalera de formación para empresarios y equipos, de la jornada gratuita al taller in-company.</p>
+    </div>
   </div>
 </section>
 
