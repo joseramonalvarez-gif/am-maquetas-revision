@@ -11,6 +11,7 @@
   SIN INTEGRACIÓN (D-070): el enlace de pago de cada producto lo crea Antonio en Stripe (PRODUCTOS[].enlace, hoy '#') y el
   registro de consentimientos (fecha, hora, texto) lo monta CMYK con el formulario de WordPress.
   Copy de esta página: microcopy de arquitectura del asistente, declarado para que Antonio lo valide.
+  PASO 9ae (Antonio · B10, 2026-09-03): masterclass a 100 € IVA incluido (D-113): base 82,64 + IVA 17,36 = 100,00.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
 -->
@@ -191,7 +192,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
   var PRODUCTOS = {
     masterclass: { nombre: 'Masterclass de Precios · grabada', incluye: 'Acceso inmediato · turno de preguntas incluido · en tu área privada para siempre.',
       entrega: 'Tras el pago te llega un correo con el acceso al área privada de Nevada & Amurai (la sociedad de AMURAI). Es contenido digital: al pedir el acceso inmediato renuncias al desistimiento.',
-      base: 69, digital: true, volver: '../02_masterclass/landing_masterclass_AMURAI_v1.1.html', enlace: '#' },
+      base: 82.64, total: 100, digital: true, volver: '../02_masterclass/landing_masterclass_AMURAI_v1.1.html', enlace: '#' },
     directo: { nombre: 'Masterclass de Precios · edición en directo', incluye: 'Sesión online en directo con preguntas · y la grabada, en tu área privada.',
       entrega: 'Antes de la sesión te llega por correo el enlace de acceso. Después, la grabación queda en el área privada de Nevada & Amurai (la sociedad de AMURAI).',
       base: null, digital: false, volver: '../02_masterclass/masterclass_directo_AMURAI_v1.0.html', enlace: '#' },
@@ -221,8 +222,11 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     document.getElementById('t-iva').textContent = '—'; document.getElementById('t-total').textContent = '—';
     btn.textContent = 'Pagar';
   } else {
-    var iva = Math.round(p.base * 21) / 100, total = Math.round((p.base + iva) * 100) / 100;
-    document.getElementById('t-base').textContent = eur(p.base);
+    // D-113: si el producto declara total (IVA incluido), la base se deduce; si no, base + 21 %.
+    var total = p.total ? p.total : Math.round(p.base * 121) / 100;
+    var base = p.total ? Math.round(p.total / 1.21 * 100) / 100 : p.base;
+    var iva = Math.round((total - base) * 100) / 100;
+    document.getElementById('t-base').textContent = eur(base);
     document.getElementById('t-iva').textContent = eur(iva);
     document.getElementById('t-total').textContent = eur(total);
     btn.textContent = 'Pagar ' + eur(total);
