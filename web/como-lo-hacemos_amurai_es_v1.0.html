@@ -8,6 +8,7 @@
   los 6 pasos (landing del taller, validada) y el catálogo (D-021). Las frases de enlace entre bloques son mínimas
   y están declaradas en la ficha: Antonio las valida o las cambia. Sin cifras. Sin pasarela.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
+  PASO 9ad (Antonio · bloque A, 2026-09-03): aviso bajo formularios, H2 del formulario final, bios unificadas (versión in-company) y caja del grupo bajo las bios.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
   PASO 9b (GATE D, 2026-09-02): menú sin Contacto; menú móvil (hamburguesa) hasta 1080 px; botón de cabecera sin partir.
   PASO 9c (GATE D, 2026-09-02): sistema de acentos (etiqueta del hero, palabra subrayada en el H1, guion en las etiquetas de sección, enlaces en el texto); copy intacto.
@@ -263,6 +264,8 @@
   /* reveal — sobrio, a nivel de sección. Visible por defecto; la animación solo se añade al entrar (nunca oculta contenido). */
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
+  .group-note{margin-top:24px;background:var(--ink);color:#f4f2ec;border-radius:14px;padding:20px 24px;font-size:1.08rem;font-weight:600;line-height:1.5}
+  .group-note b{color:var(--gold);font-weight:800}
 </style>
 <style>
   .prose p{margin-bottom:14px;max-width:70ch}
@@ -410,7 +413,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       <div class="lead2">Entra en el club de ventas y negocio de Amurai.</div>
       <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
       <input type="email" name="correo" placeholder="Correo" aria-label="Correo" required>
-      <p class="aviso">Al apuntarte entras también en el CLUB AMURAI: cada día te llega una lección corta sobre precios. Es posible que alguna vez te venda algo. Te avisamos.</p>
+      <p class="aviso">Al apuntarte entras en el Club Amurai, donde todos los días recibes una lección gratis sobre precios, ventas y beneficios. Además, también te vendemos.</p>
 <div class="capa1" data-bloque="A">
 <details class="info"><summary>Información básica sobre protección de datos</summary><table>
 <tr><th>Responsable</th><td>NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI)</td></tr>
@@ -511,33 +514,33 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
         <img class="sp-foto" src="../piezas/_assets/bio-antonio.jpg" alt="Antonio Molina">
         <div>
           <div class="nm">Antonio Molina</div>
-          <div class="role">Fundador de Amurai · Creador del método<small>IESE Business School</small></div>
-          <p>Directivo en grandes corporaciones antes de fundar Amurai. Ha construido el sistema de los 6 pasos desde el trabajo directo con pymes de distintos sectores. Lo que imparte en el taller es lo que ha aplicado en empresa real, con resultados medibles.</p>
+          <div class="role">Fundador de Amurai</div>
+          <p>Fundador de varias empresas de distintos sectores. Su recorrido va de la pyme y la empresa familiar a puestos de dirección en grandes corporaciones. Formado en IESE Business School, ha construido el sistema de los 6 pasos desde el trabajo directo con pymes de construcción, distribución, industria y servicios. Lo que imparte es lo que ha aplicado en empresa real, con resultados medibles.</p>
         </div>
       </div>
       <div class="sp">
         <img class="sp-foto" src="../piezas/_assets/bio-jr.jpg" alt="José Ramón Álvarez">
         <div>
           <div class="nm">José Ramón Álvarez</div>
-          <div class="role">Socio de Amurai · Ponente<small>The Power MBA · Holaluz</small></div>
-          <p>Más de 20 años entre grandes corporaciones y empresas digitales, ocupando puestos de dirección comercial y desarrollo de negocio. Hoy aplica ese recorrido ayudando a empresas a construir sistemas que funcionen: con datos, con método y sin depender de la intuición.</p>
+          <div class="role">Cofundador de Amurai y Data Goal</div>
+          <p>Más de 20 años en ventas, de la pyme a la gran corporación —de comercial a director nacional de ventas, con paso por compañías como Holaluz—, gestionando equipos y canales comerciales a nivel nacional. Hoy ayuda a empresas de cualquier tamaño a construir sistemas que funcionen: con datos, con método y sin depender de la intuición.</p>
         </div>
       </div>
     </div>
-    <p class="muted rv" style="margin-top:22px;max-width:70ch">Amurai forma parte de un grupo de empresas: despachos, formación, tecnología e inteligencia artificial, servicios profesionales, intermediación e inversión.</p>
+    <div class="group-note rv"><b>AMURAI forma parte de un grupo empresarial:</b> despachos, formación, tecnología e inteligencia artificial, servicios profesionales, intermediación e inversión.</div>
   </div>
 </section>
 
 <!-- 6 · CIERRE · el embudo (literal de la página actual) -->
 <section class="s-cream">
   <div class="wrap">
-    <h2 class="big rv center">¿Quieres mejorar? Entra en el club de ventas y negocio de Amurai. Hazlo ya.</h2>
+    <h2 class="big rv center">¿Quieres mejorar tus ventas y beneficios? Entra en el Club Amurai y descubre cómo los PRECIOS te ayudan a conseguirlo.</h2>
     <p class="sec-intro rv" style="text-align:center;margin:0 auto">Consejos y casos diarios para mejorar. Día que no estás, día perdido.</p>
     <form class="club-form rv" action="#" method="post" novalidate>
       <input type="hidden" name="tag" value="club-alta-web"><input type="hidden" name="origen" value="como-lo-hacemos-1">
       <input type="text" name="nombre" placeholder="Nombre" aria-label="Nombre" required>
       <input type="email" name="correo" placeholder="Correo" aria-label="Correo" required>
-      <p class="aviso">Al apuntarte entras también en el CLUB AMURAI: cada día te llega una lección corta sobre precios. Es posible que alguna vez te venda algo. Te avisamos.</p>
+      <p class="aviso">Al apuntarte entras en el Club Amurai, donde todos los días recibes una lección gratis sobre precios, ventas y beneficios. Además, también te vendemos.</p>
 <div class="capa1" data-bloque="A">
 <details class="info"><summary>Información básica sobre protección de datos</summary><table>
 <tr><th>Responsable</th><td>NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI)</td></tr>
