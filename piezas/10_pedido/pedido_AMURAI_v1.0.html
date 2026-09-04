@@ -207,7 +207,8 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       base: 290, digital: false, volver: '../06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html', enlace: '' }
   };
   // EDICIONES del taller (mismo listado que taller_ediciones): clave = parámetro edicion
-  var EDICIONES = { 'granada-2026-09-25': 'Granada · viernes 25 de septiembre de 2026 · 9:00 a 14:00 h · Cámara de Comercio de Granada' };
+  // Cada edición: texto que se muestra y, si esa edición tiene su propio enlace de pago, 'enlace' (si no, se usa PRODUCTOS.taller.enlace).
+  var EDICIONES = { 'granada-2026-09-25': { texto: 'Granada · viernes 25 de septiembre de 2026 · 9:00 a 14:00 h · Cámara de Comercio de Granada', enlace: '' } };
 
   var q = new URLSearchParams(location.search), key = q.get('producto') || document.body.getAttribute('data-producto') || 'masterclass', p = PRODUCTOS[key] || PRODUCTOS.masterclass;
   function eur(n){ return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €'; }
@@ -218,7 +219,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
   document.getElementById('volver').href = p.volver;
   document.title = 'Pedido · ' + p.nombre + ' · Amurai';
   var ed = q.get('edicion');
-  if (ed) { var e = document.getElementById('p-edicion'); e.textContent = EDICIONES[ed] || ('Edición: ' + ed); e.hidden = false; }
+  if (ed) { var e = document.getElementById('p-edicion'); e.textContent = (EDICIONES[ed] && EDICIONES[ed].texto) || ('Edición: ' + ed); e.hidden = false; }
   var btn = document.getElementById('pagar');
   if (p.base === null) {
     document.getElementById('t-base').innerHTML = '<span class="pend">[PRECIO DE ESTA EDICIÓN]</span>';
@@ -243,10 +244,10 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
   // SIN INTEGRACIÓN (D-070): aquí no se guarda nada. En producción, el formulario registra los consentimientos y redirige al enlace de pago.
   document.getElementById('pedido').addEventListener('submit', function(ev){
-    ev.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; } if(!p.enlace){ return; }
+    ev.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; }
+    var enlace = (ed && EDICIONES[ed] && EDICIONES[ed].enlace) || p.enlace; if(!enlace){ return; }
     var correo = document.getElementById('correo').value;
-    if (p.enlace === '#') { alert('Maqueta: aquí se redirige al enlace de pago de Stripe de «' + p.nombre + '» con prefilled_email=' + correo); return; }
-    location.href = p.enlace + (p.enlace.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(correo) + '&locale=es';
+    location.href = enlace + (enlace.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(correo) + '&locale=es';
   });
 </script>
 </body>
