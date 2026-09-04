@@ -10,10 +10,13 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><!-- DEFINITIVA v3 (S-052, 2026-09-04): propuestas altas y medias de copy y SEO de E47 aplicadas (D-122) --><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Gracias · Amurai</title>
+<link rel="canonical" href="https://amurai.es/masterclass-de-precios/gracias/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/masterclass-de-precios/gracias/"><meta property="og:title" content="Gracias · Amurai"><meta property="og:description" content="Pago recibido. Aquí tienes los siguientes pasos."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Pago recibido. Aquí tienes los siguientes pasos.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -52,15 +55,17 @@ section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;h
 .s-ink .hl{background:var(--gold);color:var(--ink);padding:.02em .18em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
 .stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header id="top">
-  <div class="bar"><a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a></div>
+  <div class="bar"><a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a></div>
 </header>
 
-<main>
+<main id="contenido">
   <div class="box">
     <span class="eyebrow">Pago recibido</span>
     <h1>Hecho. Gracias.</h1>
@@ -73,13 +78,11 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
     <div class="card">
       <h2>Recibo, factura y dudas</h2>
-      <p>El recibo te llega ahora mismo por correo desde Stripe, a nombre de <b>NEVADA &amp; AMURAI CONSULTORES SL</b> (la sociedad de AMURAI). ¿Necesitas factura? Pídela respondiendo al correo del recibo o en <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>. Para cualquier duda, el mismo buzón.</p>
+      <p>El recibo te llega ahora mismo por correo desde Stripe, a nombre de <b>NEVADA &amp; AMURAI CONSULTORES SL</b> (la sociedad de AMURAI). ¿Necesitas factura? Pídela, desde el correo que usaste al pagar, en <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>. Para cualquier duda, el mismo buzón.</p>
       <p id="p-club" hidden>Si marcaste la casilla del CLUB AMURAI, desde mañana te llega cada día la lección sobre precios.</p>
     </div>
 
     <a class="btn ghost" href="../07_club/landing_club_AMURAI_v1.0.html">Volver a amurai.es</a>
-
-    <div class="nota"><b>Nota para la agencia (no se publica):</b> una página de gracias por producto. En Stripe, el enlace de pago de cada producto redirige aquí tras el pago (<i>Después del pago → redirigir</i>), opcionalmente con <code>{CHECKOUT_SESSION_ID}</code>. Registro de puerta: Antonio etiqueta la compra en GetResponse (<code>cliente-&lt;servicio&gt;</code>) a partir de la lista de pagos de Stripe (D-106 §7). <code>noindex</code>.</div>
   </div>
 </main>
 
@@ -91,16 +94,16 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
 <script>
   var TEXTOS = {
-    masterclass: { nombre: 'Masterclass de Precios · grabada', ahora: 'En unos minutos te llega un correo con el acceso al área privada de Nevada & Amurai, la sociedad de AMURAI. Ahí está la masterclass, con el turno de preguntas, para siempre.',
-      pasos: ['Busca el correo con el acceso (mira en spam si no lo ves).', 'Entra en el área privada y guarda el enlace.', 'Si en una hora no te ha llegado, escríbenos y lo resolvemos.'] },
-    directo: { nombre: 'Masterclass de Precios · edición en directo', ahora: 'Tu plaza en directo está reservada. Antes de la sesión te llega por correo el enlace de acceso; después, la grabación queda en el área privada de Nevada & Amurai, la sociedad de AMURAI.',
-      pasos: ['Apunta la fecha y la hora de la sesión (van en el recibo).', 'El enlace de acceso te llega por correo antes de la sesión.', 'Prepara tus preguntas: hay turno en directo.'] },
+    masterclass: { nombre: 'Masterclass de Precios · grabada', ahora: 'En unos minutos te llega un correo con tu acceso privado a la masterclass. Ahí está, con el turno de preguntas, para siempre.',
+      pasos: ['Busca el correo con el acceso (mira en spam si no lo ves).', 'Entra con el acceso del correo y guarda el enlace.', 'Si en una hora no te ha llegado, escríbenos y lo resolvemos.'] },
+    directo: { nombre: 'Masterclass de Precios · edición en directo', ahora: 'Tu plaza en directo está reservada. Antes de la sesión te llega por correo el enlace de acceso; después, la grabación queda en tu acceso privado.',
+      pasos: ['Apunta la fecha y la hora de la sesión: van en el correo con el enlace de acceso.', 'El enlace de acceso te llega por correo antes de la sesión.', 'Prepara tus preguntas: hay turno en directo.'] },
     taller: { nombre: 'Taller presencial · Tu Sistema de Precios', ahora: 'Tu plaza está reservada. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. Unos días antes, un recordatorio.',
       pasos: ['Revisa el correo con lugar, hora y qué traer.', 'Trae ejemplos reales de tus precios: se trabaja sobre lo tuyo.', 'Después del taller tienes un mes de soporte por email.'] },
     tramo: { nombre: 'Taller Tu Sistema de Precios · tramo especial', ahora: 'Tu plaza está reservada. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. Unos días antes, un recordatorio.',
       pasos: ['Revisa el correo con lugar, hora y qué traer.', 'Trae tu diagnóstico de la sesión gratuita: empezamos por ahí.', 'Después del taller tienes un mes de soporte por email.'] }
   };
-  var key = new URLSearchParams(location.search).get('producto') || 'masterclass', t = TEXTOS[key] || TEXTOS.masterclass;
+  var key = new URLSearchParams(location.search).get('producto') || document.body.getAttribute('data-producto') || 'masterclass', t = TEXTOS[key] || TEXTOS.masterclass;
   document.getElementById('h-nombre').textContent = t.nombre;
   document.getElementById('p-ahora').textContent = t.ahora;
   var ol = document.getElementById('pasos'); t.pasos.forEach(function(s){ var li = document.createElement('li'); li.textContent = s; ol.appendChild(li); });

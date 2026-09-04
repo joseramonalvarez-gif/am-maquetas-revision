@@ -8,9 +8,11 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Derecho de desistimiento · Amurai</title>
+<link rel="canonical" href="https://amurai.es/desistimiento/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/desistimiento/"><meta property="og:title" content="Derecho de desistimiento · Amurai"><meta property="og:description" content="Formulario e información para ejercer el derecho de desistimiento en las compras realizadas en amurai.es."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
 <meta name="robots" content="noindex, follow">
 <meta name="description" content="Formulario e información para ejercer el derecho de desistimiento en las compras realizadas en amurai.es.">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 218 132'%3E%3Crect width='218' height='132' rx='24' fill='%23191919'/%3E%3Ccircle cx='105' cy='50' r='17' fill='%23F0C31A'/%3E%3Crect x='142' y='51' width='28' height='41' fill='%23F0C31A'/%3E%3Cpath d='M73 94 C106 94,133 79,142 51' fill='none' stroke='%23F0C31A' stroke-width='7'/%3E%3C/svg%3E">
@@ -24,8 +26,8 @@
   body{background:var(--paper);color:var(--ink);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   a{color:inherit}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 max(24px,env(safe-area-inset-left)) 0 max(24px,env(safe-area-inset-right))}
-  .maq{background:var(--ink);color:#fff;font-size:.82rem;padding:8px 0;text-align:center}
-  .maq button{margin-left:12px;background:transparent;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer}
+  
+  
   header{position:sticky;top:0;z-index:50;background:rgba(247,245,240,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   header .bar{display:flex;align-items:center;justify-content:space-between;height:66px}
   .logo{display:inline-flex;align-items:center;text-decoration:none}.logo img{height:26px;width:auto;display:block}
@@ -58,18 +60,19 @@
   footer nav{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:.9rem}
   footer nav a{color:#fff;text-decoration:none;opacity:.85}footer nav a:hover{opacity:1;text-decoration:underline}
   @media(max-width:640px){.hero{padding:44px 0 24px}.btn{width:100%;justify-content:center}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
 </style>
 </head>
 <body>
-
-<div class="maq" id="maq">MAQUETA · página legal · no es código de producción. Los recuadros grises son notas para la agencia y no se publican. <button onclick="document.getElementById('maq').style.display='none'">Ocultar</button></div>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header>
   <div class="wrap bar">
-    <a href="../07_club/landing_club_AMURAI_v1.0.html" class="logo" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" class="logo" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a>
     <a href="../07_club/landing_club_AMURAI_v1.0.html" class="back">← Volver a amurai.es</a>
   </div>
 </header>
+<main id="contenido">
 
 <section class="hero">
   <div class="wrap">
@@ -81,8 +84,6 @@
 
 <div class="wrap">
 <article class="legal">
-
-  <div class="nota"><b>Nota para la agencia.</b> Texto validado (GATE A, 2026-09-02). <b>Página nueva</b> en <b>/desistimiento/</b>. El formulario se conecta a <b>antonio.molina@amurai.es</b> y devuelve un acuse de recibo al correo que indique el usuario (la cláusula lo promete). Se enlaza desde las condiciones de contratación y desde el correo de confirmación de compra. El botón «Descargar el formulario en PDF» apunta al PDF que se genera con el modelo en papel (pendiente de subir).</div>
 
   <h2>Cómo desistir</h2>
   <p>Dispones de <b>catorce días naturales</b> desde la celebración del contrato para desistir sin penalización y sin indicar los motivos, salvo en los casos exceptuados en nuestras <a href="condiciones-contratacion_AMURAI_v1.0.html">Condiciones Generales de Contratación</a> (servicios ya ejecutados y contenido digital cuya ejecución has solicitado expresamente). Puedes hacerlo por correo electrónico a <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>, por escrito a C/ Pintor Manuel Maldonado 34, 18007 Granada, o con este formulario.</p>
@@ -104,7 +105,7 @@
 
     <label class="chk"><input type="checkbox" required> He leído la información sobre protección de datos que figura debajo.</label>
     <button class="btn" type="submit">Enviar el desistimiento</button>
-    <a class="btn ghost" href="#" style="margin-left:8px" title="PDF pendiente de generar">Descargar el formulario en PDF</a>
+    <a class="btn ghost" href="#" style="margin-left:8px" onclick="window.print();return false" title="Se abre el diálogo de impresión: elige «Guardar como PDF»">Imprimir o guardar el formulario en PDF</a>
 
     <div class="capa1">
       <b style="color:var(--ink)">Información básica sobre protección de datos</b> · Responsable: NEVADA &amp; AMURAI CONSULTORES SL (marca AMURAI) · Finalidad: atender su derecho de desistimiento · Derechos: acceder, rectificar y suprimir los datos, así como otros derechos, como se explica en la información adicional · Información adicional: <a href="politica-privacidad_AMURAI_v1.0.html">Política de Privacidad</a>.
@@ -125,14 +126,13 @@
   <p>Podrá dirigirse a la Autoridad de Control competente para presentar la reclamación que considere oportuna.</p>
   <p>El envío de este formulario implica la formalización de su derecho de desistimiento y en consecuencia, la extinción de la obligación de la ejecución del contrato celebrado entre las partes. Una vez tramitada su solicitud, NEVADA &amp; AMURAI CONSULTORES SL le remitirá acuse de recibo por medio del canal de comunicación que usted haya indicado en el citado formulario. Le recordamos, que lo deberá conservar como prueba del ejercicio de su derecho de desistimiento.</p>
   <p>NEVADA &amp; AMURAI CONSULTORES SL deberá facilitar un correo electrónico válido para ejercer el derecho de desistimiento o cualquier otra forma de comunicación duradera.</p>
-
-  <p class="upd">Última actualización: <mark class="pend">[FECHA DE PUBLICACIÓN]</mark></p>
 </article>
 </div>
 
+</main>
 <footer>
   <div class="wrap">
-    <a href="../07_club/landing_club_AMURAI_v1.0.html" class="logo" style="justify-content:center;margin-bottom:6px" aria-label="Amurai"><img src="../_assets/amurai-logo-gold.png" alt="Amurai" style="height:34px"></a>
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" class="logo" style="justify-content:center;margin-bottom:6px" aria-label="Amurai"><img src="../_assets/amurai-logo-gold.png" alt="Amurai" style="height:34px" width="488" height="130"></a>
     <p class="tag">Nunca caminarás solo.</p>
     <p>www.amurai.es</p>
     <nav aria-label="Legal">

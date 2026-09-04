@@ -2,7 +2,8 @@
 <!--
   AMURAI · PIEZA 2 · MASTERCLASS DE PRECIOS · PRÓXIMAS EDICIONES EN DIRECTO · v1.0
   Estado: VALIDADO (D-082, 2026-09-02) por Antonio Molina (contenido) y José Ramón Álvarez (gobierno)
-  Página con DOS ESTADOS (D-079), gobernados por el atributo data-edicion del <body>:
+  Página con DOS ESTADOS (D-079), gobernados por el atributo data-edicion del <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>:
     data-edicion="no" (por defecto) → no hay edición programada: formulario de aviso (entra en el Club,
                                       etiqueta masterclass-directo-interesado, D-080) + acceso a la grabada.
     data-edicion="si"               → hay edición programada: ficha de la edición (fecha, hora, formato,
@@ -19,10 +20,12 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><!-- DEFINITIVA v3 (S-052, 2026-09-04): propuestas altas y medias de copy y SEO de E47 aplicadas (D-122) --><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Próximas ediciones en directo · Masterclass de Precios · Amurai</title>
-<meta name="description" content="Próximas ediciones en directo de la Masterclass de Precios. Si no hay ninguna abierta, déjanos tu correo y te avisamos. La grabada está disponible hoy.">
+<title>Ediciones en directo · Masterclass de Precios · Amurai</title>
+<link rel="canonical" href="https://amurai.es/masterclass-de-precios/en-directo/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/masterclass-de-precios/en-directo/"><meta property="og:title" content="Ediciones en directo · Masterclass de Precios · Amurai"><meta property="og:description" content="Próximas ediciones en directo de la Masterclass de Precios. Si no hay ninguna abierta, déjame tu correo y te aviso. La grabada está disponible hoy."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Próximas ediciones en directo de la Masterclass de Precios. Si no hay ninguna abierta, déjame tu correo y te aviso. La grabada está disponible hoy.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -117,7 +120,7 @@ footer .legal-nav a:hover,footer p a:hover{color:#fff}
 /* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
 .capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
 .capa1 details.info{display:block;margin:0 0 2px}
-.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary{display:inline-flex;align-items:center;min-height:32px;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
 .capa1 details.info summary::-webkit-details-marker{display:none}
 .capa1 details.info summary::after{content:" ▾"}
 .capa1 details.info[open] summary::after{content:" ▴"}
@@ -132,21 +135,22 @@ section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;h
 .s-ink .hl{background:var(--gold);color:var(--ink);padding:.02em .18em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
 .stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
+h1 .eyebrow{display:table!important;margin-bottom:14px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1.3}
 </style>
 </head>
 <body data-edicion="no">
 
 <header id="top">
   <div class="bar">
-    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a>
     <a class="back" href="landing_masterclass_AMURAI_v1.1.html">← Masterclass de Precios</a>
   </div>
 </header>
 
-<main>
+<main id="contenido">
   <div class="box">
-    <span class="eyebrow">Masterclass de Precios · En directo</span>
-    <h1>Próximas ediciones <span class="hl">en directo</span></h1>
+    <h1><span class="eyebrow">Masterclass de Precios · En directo</span> Próximas ediciones <span class="hl">en directo</span></h1>
 
     <!-- ===== ESTADO «SÍ HAY EDICIÓN PROGRAMADA» · se rellena ANTES de publicar ===== -->
     <div id="con-edicion">
@@ -155,25 +159,24 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
         <h2>Próxima edición · <span class="pend">[NOMBRE O NÚMERO DE LA EDICIÓN]</span></h2>
         <div class="facts">
           <div class="fact"><div class="t">Fecha</div><div class="v"><span class="pend">[DÍA DE LA SEMANA, D DE MES DE AAAA]</span></div></div>
-          <div class="fact"><div class="t">Hora</div><div class="v"><span class="pend">[HH:MM]</span> (hora de España)</div></div>
+          <div class="fact"><div class="t">Hora</div><div class="v"><span class="pend">[HH:MM]</span> (hora peninsular)</div></div>
           <div class="fact"><div class="t">Formato</div><div class="v">Online, en directo. Entre 1 h y 1 h 30, con turno de preguntas</div></div>
           <div class="fact"><div class="t">Plazas</div><div class="v"><span class="pend">[NÚMERO O «SIN LÍMITE»]</span></div></div>
         </div>
         <h2 style="font-size:1.05rem">Contenido</h2>
         <ul>
-          <li>Precios, ofertas, propuestas y ventas: casos prácticos, dudas y ideas accionables.</li>
+          <li>Precios, ofertas, propuestas y ventas: casos prácticos, dudas e ideas para aplicar mañana.</li>
           <li>Turno de preguntas y respuestas al final, para que plantees tu caso.</li>
           <li><span class="pend">[SI ESTA EDICIÓN TIENE UN FOCO CONCRETO, AQUÍ. SI NO, SE BORRA ESTA LÍNEA]</span></li>
         </ul>
         <h2 style="font-size:1.05rem">Condiciones</h2>
         <ul>
-          <li><b><span class="pend">[PRECIO DE ESTA EDICIÓN]</span> € + IVA.</b> <i>(El precio del directo se fija en cada convocatoria, D-081. Se rellena antes de publicar.)</i></li>
+          <li><b><span class="pend">[PRECIO DE ESTA EDICIÓN]</span> € + IVA.</b></li>
           <li>Queda grabada, con su turno de preguntas, en tu área privada para siempre.</li>
           <li>Miembros del Club Amurai, alumnos y clientes de otros servicios: precio especial, anunciado en el Club.</li>
           <li>Inscripción abierta hasta el <span class="pend">[FECHA DE CIERRE]</span>.</li>
         </ul>
         <a class="btn w" href="../10_pedido/pedido_AMURAI_v1.0.html?producto=directo">Quiero mi plaza en directo</a>
-        <p class="rgpd" id="inscripcion">Inscripción y pago: <span class="pend">[ENLACE — PENDIENTE, fuera del alcance de esta fase]</span></p>
       </div>
       <div class="grab">
         <b>¿No puedes ese día? La grabada está disponible hoy.</b>
@@ -184,7 +187,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
     <!-- ===== ESTADO «NO HAY EDICIÓN PROGRAMADA» · por defecto ===== -->
     <div id="sin-edicion">
-      <p class="lead">Ahora mismo <b>no hay ninguna edición en directo abierta</b>. Las organizamos a lo largo del año según el interés que vamos viendo. Si quieres asistir a la próxima, déjame tu correo y te aviso en cuanto la abramos.</p>
+      <p class="lead">Ahora mismo <b>no hay ninguna edición en directo abierta</b>. Las organizamos a lo largo del año según el interés que vamos viendo. Si quieres asistir a la próxima, déjame tu correo y te aviso en cuanto la abra.</p>
 
       <form id="aviso-directo" class="card" action="#" method="post" novalidate>
         <input type="hidden" name="tag" value="masterclass-directo-interesado">
@@ -222,7 +225,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
       <div class="card" id="confirmacion" hidden>
         <h2>Hecho. Te aviso.</h2>
-        <p style="color:var(--ink-2)">Cuando abramos la próxima edición en directo, serás de los primeros en saberlo. Mientras tanto, cada día te llega la lección del CLUB AMURAI.</p>
+        <p style="color:var(--ink-2)">Cuando abra la próxima edición en directo, serás de los primeros en saberlo. Mientras tanto, cada día te llega la lección del CLUB AMURAI.</p>
       </div>
 
       <div class="grab">

@@ -15,9 +15,11 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><!-- DEFINITIVA v3 (S-052, 2026-09-04): propuestas altas y medias de copy y SEO de E47 aplicadas (D-122) --><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Próximas ediciones · Taller Tu Sistema de Precios · Amurai</title>
+<link rel="canonical" href="https://amurai.es/taller-tu-sistema-de-precios/ediciones/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/taller-tu-sistema-de-precios/ediciones/"><meta property="og:title" content="Próximas ediciones · Taller Tu Sistema de Precios · Amurai"><meta property="og:description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Tu ciudad no está? Apúntate a la lista de espera."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
 <meta name="description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Tu ciudad no está? Apúntate a la lista de espera.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,7 +112,7 @@ footer .legal-nav a:hover,footer p a:hover{color:#fff}
 /* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
 .capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
 .capa1 details.info{display:block;margin:0 0 2px}
-.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary{display:inline-flex;align-items:center;min-height:32px;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
 .capa1 details.info summary::-webkit-details-marker{display:none}
 .capa1 details.info summary::after{content:" ▾"}
 .capa1 details.info[open] summary::after{content:" ▴"}
@@ -125,22 +127,24 @@ section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;h
 .s-ink .hl{background:var(--gold);color:var(--ink);padding:.02em .18em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
 .stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
+h1 .eyebrow{display:table!important;margin-bottom:14px;font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;line-height:1.3}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header id="top">
   <div class="bar">
-    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a>
     <a class="back" href="landing_taller_presencial_AMURAI_v1.2.html">← Taller Tu Sistema de Precios</a>
   </div>
 </header>
 
-<main>
+<main id="contenido">
   <div class="box">
-    <span class="eyebrow">Taller presencial · Tu Sistema de Precios</span>
-    <h1>Próximas ediciones</h1>
-    <p class="lead">Cinco horas en sala, máximo 25 personas por edición, 390 € + IVA por persona. Estas son las ediciones abiertas ahora mismo.</p>
+    <h1><span class="eyebrow">Taller presencial · Tu Sistema de Precios</span> Próximas ediciones</h1>
+    <p class="lead">Cinco horas en sala, máximo 25 personas por edición, 390 € + IVA por persona.</p>
 
     <!-- ===== EDICIONES ABIERTAS · se pintan desde el listado del script ===== -->
     <div id="ediciones"></div>

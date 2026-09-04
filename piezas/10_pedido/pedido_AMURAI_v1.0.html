@@ -17,10 +17,13 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8"><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Pedido · Amurai</title>
+<link rel="canonical" href="https://amurai.es/masterclass-de-precios/pedido/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/masterclass-de-precios/pedido/"><meta property="og:title" content="Pedido · Amurai"><meta property="og:description" content="Resumen de tu pedido en amurai.es antes del pago seguro."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Resumen de tu pedido en amurai.es antes del pago seguro.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -60,7 +63,7 @@
   .chk .txt{flex:1}
   .chk details{display:block}
   .chk details:not([open])>.full{display:none}
-  .chk summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;margin-left:6px;list-style:none}
+  .chk summary{display:inline-flex;align-items:center;min-height:32px;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;margin-left:6px;list-style:none}
   .chk summary::-webkit-details-marker{display:none}
   .chk summary::after{content:" ▾"}
   .chk details[open] summary::after{content:" ▴"}
@@ -85,7 +88,7 @@
 /* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
 .capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
 .capa1 details.info{display:block;margin:0 0 2px}
-.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary{display:inline-flex;align-items:center;min-height:32px;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
 .capa1 details.info summary::-webkit-details-marker{display:none}
 .capa1 details.info summary::after{content:" ▾"}
 .capa1 details.info[open] summary::after{content:" ▴"}
@@ -100,18 +103,20 @@ section .eyebrow:not(.gold)::before{content:"";display:inline-block;width:18px;h
 .s-ink .hl{background:var(--gold);color:var(--ink);padding:.02em .18em;border-radius:4px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold);text-decoration-thickness:2px;text-underline-offset:3px}
 .stackup li::before{content:"→ ";color:var(--gold);font-weight:900}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
 </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header id="top">
   <div class="bar">
-    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
+    <a href="../07_club/landing_club_AMURAI_v1.0.html" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a>
     <a class="back" id="volver" href="../07_club/landing_club_AMURAI_v1.0.html">← Volver</a>
   </div>
 </header>
 
-<main>
+<main id="contenido">
   <div class="box">
     <span class="eyebrow">Pedido</span>
     <h1 id="titulo">Tu pedido</h1>
@@ -173,11 +178,9 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       <div class="quien"><b>Quién te cobra.</b> El pago se hace en una página segura de Stripe. Lo procesa <b>NEVADA &amp; AMURAI CONSULTORES SL</b>, la sociedad de AMURAI: ese es el nombre que verás en la página de pago, en el recibo y en tu extracto.</div>
 
       <button class="btn" type="submit" id="pagar" disabled>Pagar</button>
-      <p class="note" id="enlace-pend" hidden><span class="pend">[ENLACE DE PAGO — lo crea Antonio en Stripe y lo pega CMYK en PRODUCTOS]</span></p>
+      
       <p class="note">Recibo por correo al momento. ¿Factura? Pídela en <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a>.</p>
     </form>
-
-    <div class="nota"><b>Nota para la agencia (no se publica):</b> una página de pedido por producto (masterclass · directo · taller por edición · tramo), montadas desde esta plantilla. El formulario <b>guarda</b> el correo, las casillas marcadas, la fecha y hora y el texto exacto aceptado (D-076) y, después, <b>redirige</b> al enlace de pago de Stripe del producto con <code>?prefilled_email=</code>. En Stripe se activa además la casilla estándar de condiciones (enlaza a /condiciones-de-contratacion/) y, tras el pago, la redirección a la página de gracias de ese producto. Precios base + IVA (Stripe Tax activo en la cuenta). <code>noindex</code>.</div>
   </div>
 </main>
 
@@ -190,23 +193,23 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 <script>
   // ===== PRODUCTOS · los mantiene Antonio (precio base, D-053) y CMYK (enlace de pago de Stripe de cada producto o edición) =====
   var PRODUCTOS = {
-    masterclass: { nombre: 'Masterclass de Precios · grabada', incluye: 'Acceso inmediato · turno de preguntas incluido · en tu área privada para siempre.',
-      entrega: 'Tras el pago te llega un correo con el acceso al área privada de Nevada & Amurai (la sociedad de AMURAI). Es contenido digital: al pedir el acceso inmediato renuncias al desistimiento.',
-      base: 82.64, total: 100, digital: true, volver: '../02_masterclass/landing_masterclass_AMURAI_v1.1.html', enlace: '#' },
-    directo: { nombre: 'Masterclass de Precios · edición en directo', incluye: 'Sesión online en directo con preguntas · y la grabada, en tu área privada.',
-      entrega: 'Antes de la sesión te llega por correo el enlace de acceso. Después, la grabación queda en el área privada de Nevada & Amurai (la sociedad de AMURAI).',
-      base: null, digital: false, volver: '../02_masterclass/masterclass_directo_AMURAI_v1.0.html', enlace: '#' },
+    masterclass: { nombre: 'Masterclass de Precios · grabada', incluye: 'Acceso inmediato · turno de preguntas incluido · acceso privado, para siempre.',
+      entrega: 'Tras el pago te llega un correo con tu acceso privado a la masterclass. Es contenido digital: al pedir el acceso inmediato renuncias al desistimiento.',
+      base: 82.64, total: 100, digital: true, volver: '../02_masterclass/landing_masterclass_AMURAI_v1.1.html', enlace: '' },
+    directo: { nombre: 'Masterclass de Precios · edición en directo', incluye: 'Sesión online en directo con preguntas · y la grabada, en tu acceso privado.',
+      entrega: 'Antes de la sesión te llega por correo el enlace de acceso. Después, la grabación queda en tu acceso privado.',
+      base: null, digital: false, volver: '../02_masterclass/masterclass_directo_AMURAI_v1.0.html', enlace: '' },
     taller: { nombre: 'Taller presencial · Tu Sistema de Precios', incluye: 'Cinco horas en sala · máximo 25 personas · herramientas del sistema · un mes de soporte por email.',
-      entrega: 'Tu plaza queda reservada en la edición elegida. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. El soporte posterior se atiende desde el área privada de Nevada & Amurai (la sociedad de AMURAI).',
-      base: 390, digital: false, volver: '../03_taller_presencial/taller_ediciones_AMURAI_v1.0.html', enlace: '#' },
+      entrega: 'Tu plaza queda reservada en la edición elegida. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. El soporte posterior, durante un mes, se atiende por correo.',
+      base: 390, digital: false, volver: '../03_taller_presencial/taller_ediciones_AMURAI_v1.0.html', enlace: '' },
     tramo: { nombre: 'Taller Tu Sistema de Precios · tramo especial para asistentes de la sesión gratuita', incluye: 'El taller completo de cinco horas, con las mismas herramientas y el mes de soporte.',
-      entrega: 'Tu plaza queda reservada. Te llegan por correo el recibo y los datos prácticos. El soporte posterior se atiende desde el área privada de Nevada & Amurai (la sociedad de AMURAI).',
-      base: 290, digital: false, volver: '../06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html', enlace: '#' }
+      entrega: 'Tu plaza queda reservada. Te llegan por correo el recibo y los datos prácticos. El soporte posterior, durante un mes, se atiende por correo.',
+      base: 290, digital: false, volver: '../06_tramo_especial/landing_tramo_especial_AMURAI_v1.2.html', enlace: '' }
   };
   // EDICIONES del taller (mismo listado que taller_ediciones): clave = parámetro edicion
   var EDICIONES = { 'granada-2026-09-25': 'Granada · viernes 25 de septiembre de 2026 · 9:00 a 14:00 h · Cámara de Comercio de Granada' };
 
-  var q = new URLSearchParams(location.search), key = q.get('producto') || 'masterclass', p = PRODUCTOS[key] || PRODUCTOS.masterclass;
+  var q = new URLSearchParams(location.search), key = q.get('producto') || document.body.getAttribute('data-producto') || 'masterclass', p = PRODUCTOS[key] || PRODUCTOS.masterclass;
   function eur(n){ return n.toLocaleString('es-ES',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €'; }
   document.getElementById('titulo').textContent = 'Tu pedido';
   document.getElementById('p-nombre').textContent = p.nombre;
@@ -232,7 +235,6 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     btn.textContent = 'Pagar ' + eur(total);
   }
   if (p.digital) { var d = document.getElementById('chk-digital'); d.hidden = false; var i = d.querySelector('input'); i.classList.add('req'); i.required = true; }
-  if (p.enlace === '#') document.getElementById('enlace-pend').hidden = false;
 
   // Capa 1: el botón solo se activa con las casillas obligatorias marcadas (D-076).
   var req = [].slice.call(document.querySelectorAll('#pedido input.req'));
@@ -241,7 +243,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 
   // SIN INTEGRACIÓN (D-070): aquí no se guarda nada. En producción, el formulario registra los consentimientos y redirige al enlace de pago.
   document.getElementById('pedido').addEventListener('submit', function(ev){
-    ev.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; }
+    ev.preventDefault(); if(!this.checkValidity()){ this.reportValidity(); return; } if(!p.enlace){ return; }
     var correo = document.getElementById('correo').value;
     if (p.enlace === '#') { alert('Maqueta: aquí se redirige al enlace de pago de Stripe de «' + p.nombre + '» con prefilled_email=' + correo); return; }
     location.href = p.enlace + (p.enlace.indexOf('?') > -1 ? '&' : '?') + 'prefilled_email=' + encodeURIComponent(correo) + '&locale=es';

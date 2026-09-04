@@ -22,9 +22,11 @@
 -->
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><!-- DEFINITIVA v3 (S-052, 2026-09-04): propuestas altas y medias de copy y SEO de E47 aplicadas (D-122) --><!-- DEFINITIVA v2 (S-050, 2026-09-04): D-116 sin área privada de N&A · sin notas internas ni huecos visibles (D-120) -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Club Amurai · la lección diaria de PRECIOS</title>
+<link rel="canonical" href="https://amurai.es/">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/"><meta property="og:title" content="Club Amurai · la lección diaria de PRECIOS"><meta property="og:description" content="Entra en el Club Amurai: cada día una lección sobre PRECIOS, MÁRGENES, BENEFICIOS, PROPUESTAS Y PSICOLOGÍA. Y de regalo, La Telaraña de Precios. Es gratis."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 218 132'%3E%3Crect width='218' height='132' rx='24' fill='%23191919'/%3E%3Ccircle cx='105' cy='50' r='17' fill='%23F0C31A'/%3E%3Crect x='142' y='51' width='28' height='41' fill='%23F0C31A'/%3E%3Cpath d='M73 94 C106 94,133 79,142 51' fill='none' stroke='%23F0C31A' stroke-width='7'/%3E%3C/svg%3E">
 <meta name="description" content="Entra en el Club Amurai: cada día una lección sobre PRECIOS, MÁRGENES, BENEFICIOS, PROPUESTAS Y PSICOLOGÍA. Y de regalo, La Telaraña de Precios. Es gratis.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -269,6 +271,7 @@
   /* reveal — sobrio, a nivel de sección. Visible por defecto; la animación solo se añade al entrar (nunca oculta contenido). */
   @keyframes secIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
   @media(prefers-reduced-motion:no-preference){section.animate{animation:secIn .7s ease both}}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:99}.skip:focus{left:8px}
 </style>
 <style>
   .big-idea{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:900;line-height:1.1;letter-spacing:-.02em;text-transform:uppercase;max-width:22ch}
@@ -336,7 +339,7 @@ footer .legal-nav a:hover,footer p a:hover{color:#fff}
 /* ===== PASO 9b (GATE D): capa 1 plegada — la información básica se despliega; las casillas siguen visibles ===== */
 .capa1{border-top:0;padding-top:4px;margin:4px 0 10px}
 .capa1 details.info{display:block;margin:0 0 2px}
-.capa1 details.info summary{display:inline-block;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
+.capa1 details.info summary{display:inline-flex;align-items:center;min-height:32px;cursor:pointer;color:var(--ink);font-weight:700;font-size:.8rem;list-style:none;padding:6px 0}
 .capa1 details.info summary::-webkit-details-marker{display:none}
 .capa1 details.info summary::after{content:" ▾"}
 .capa1 details.info[open] summary::after{content:" ▴"}
@@ -389,13 +392,15 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 .s-ink .fact .v{color:#fff}
 @media(max-width:640px){.facts{gap:14px 20px}}
 </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://amurai.es/#org","name":"AMURAI","alternateName":"Amurai","url":"https://amurai.es/","logo":"https://amurai.es/assets/amurai-logo-ink.png","email":"antonio.molina@amurai.es","description":"Consultora de pricing para pymes: convertimos tus precios en sistema, estrategia y generador de ventas y beneficios.","parentOrganization":{"@type":"Organization","name":"NEVADA & AMURAI CONSULTORES SL"}},{"@type":"WebSite","@id":"https://amurai.es/#web","url":"https://amurai.es/","name":"AMURAI","inLanguage":"es-ES","publisher":{"@id":"https://amurai.es/#org"}}]}</script>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
 <header id="top">
   <div class="wrap bar">
-    <a href="#top" class="logo" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai"></a>
-    <nav class="nav" id="nav-main">
+    <a href="#top" class="logo" aria-label="Amurai"><img src="../_assets/amurai-logo-ink.png" alt="Amurai" width="488" height="130"></a>
+    <nav class="nav" id="nav-main" aria-label="Principal">
       <a href="#top">Club Amurai</a>
       <a href="../../web/servicios_amurai_es_v1.0.html">Escalera de servicios</a>
       <a href="../../web/como-lo-hacemos_amurai_es_v1.0.html">¿Cómo lo hacemos?</a>
@@ -405,6 +410,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     <a href="#formulario_inicio" class="btn nav-cta">Entrar en el Club</a>
   </div>
 </header>
+<main id="contenido">
 
 
 <!-- 1 · HERO · las grandes ideas de la portada -->
@@ -418,7 +424,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
     </div>
     <div class="sub rv" style="margin-top:26px">
       <p class="kicker-top" style="margin-bottom:14px;font-weight:700;color:var(--ink);text-transform:uppercase">Hay una habilidad esencial en esta vida, te guste o no, y es ganar dinero.</p>
-      <p style="margin-bottom:14px">si buscas <a href="#regalo">EL REGALO</a>, viene al final.</p>
+      <p style="margin-bottom:14px">Si buscas <a href="#regalo">EL REGALO</a>, viene al final.</p>
       <p style="margin-bottom:14px">Ahora pon atención a lo que te cuento y si no tiene sentido para ti, si no lo ves interesante o que te puede ayudar, por favor, no te suscribas.</p>
       <p>No es ninguna técnica para que lo hagas, es una petición sincera porque aprecio tu tiempo y el mío.</p>
     </div>
@@ -463,7 +469,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
 <section class="s-white">
   <div class="wrap split two-text">
     <div>
-      <h2 class="big rv">Para ganar dinero, la mayoría, ponen en primer plano un buen PRODUCTO o SERVICIO.</h2>
+      <h2 class="big rv">Para ganar dinero, la mayoría pone en primer plano un buen PRODUCTO o SERVICIO.</h2>
       <ul class="stackup rv">
         <li>Un gran EQUIPO.</li>
         <li>Una buena ESTRATEGIA de venta.</li>
@@ -474,10 +480,10 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       <h2 class="big rv">¿Y el <span class="hl">PRECIO</span>?</h2>
       <div class="prose rv">
         <p>¿Y el PRICING? Si nos ponemos técnicos de chaqueta y corbata.</p>
-        <p>El PRECIO es una característica residual, que se visualiza al final y a la que nadie le pone foco… hasta que se da cuenta que no está consiguiendo las ventas esperadas, que los lanzamientos no van como estaba previsto y que no se gana dinero suficiente.</p>
-        <p>Puede ser una empresa que esté empezando, en un lanzamiento de un producto o servicio; o en empresas que llevan más tiempo y que tengan estructura y cantidad de empleados y de productos.</p>
+        <p>El PRECIO es una característica residual, que se visualiza al final y a la que nadie le pone foco… hasta que se da cuenta de que no está consiguiendo las ventas esperadas, que los lanzamientos no van como estaba previsto y que no se gana dinero suficiente.</p>
+        <p>Puede ser una empresa que esté empezando, con el lanzamiento de un producto o servicio; o una empresa que lleva más tiempo, con estructura, muchos empleados y muchos productos.</p>
         <p>Si lo piensas, en todos los casos, ya sea productos o servicios, ya sea uno o cientos, siempre tendrán un PRECIO, a veces, varios.</p>
-        <p><b>Si el PRECIO es la clave para que tu producto o servicio sea atractivo y se demande como churros, no debería tener una gran ESTRATEGIA detrás y un SISTEMA que permita utilizarlo como la HERRAMIENTA definitiva</b></p>
+        <p><b>Si el PRECIO es la clave para que tu producto o servicio sea atractivo y se venda como churros, ¿no debería tener una gran ESTRATEGIA detrás y un SISTEMA que permita utilizarlo como la HERRAMIENTA definitiva?</b></p>
       </div>
     </div>
   </div>
@@ -556,7 +562,7 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
       <span class="eyebrow rv">Extra, extra… regalo de bienvenida:</span>
       <h2 class="big rv" style="text-transform:uppercase">La Telaraña de Precios</h2>
       <div class="prose rv">
-        <p>Como regalo de bienvenida vas a recibir una estrategia de PRECIOS, paso a paso, implementada a clientes de todo tipo de sectores para la venta de productos y servicios con grandes resultados en ventas, márgenes y beneficios.</p>
+        <p>Como regalo de bienvenida vas a recibir una estrategia de PRECIOS, paso a paso, aplicada con clientes de todo tipo de sectores, para la venta de productos y servicios, con grandes resultados en ventas, márgenes y beneficios.</p>
         <p>Este sistema hará que tu cliente tenga mayor satisfacción y mejor relación contigo, que sea más fiel, te recomiende y que su ticket de compra se vea incrementado.</p>
         <p class="muted" style="font-size:.95rem">Un sistema simple. 4 movimientos estratégicos y un manual para implantarlo en tu negocio. Tres casos reales y tu telaraña interactiva para rellenar con tu caso y descargar.</p>
       </div>
@@ -593,9 +599,25 @@ p a:not(.btn),li a:not(.btn){color:inherit;font-weight:600;text-decoration:under
   </div>
 </section>
 
+<section class="s-cream" id="escalera-enlaces">
+  <div class="wrap">
+    <span class="eyebrow rv">Escalera de servicios</span>
+    <h2 class="rv">Elige tu escalón.</h2>
+    <ul class="rv" style="list-style:none;padding:0;margin:18px 0 0;display:grid;gap:10px;max-width:60ch">
+      <li><a href="#formulario_inicio">Club Amurai</a> · gratis</li>
+      <li><a href="../08_escuela/lista_espera_escuela_AMURAI_v1.0.html">Escuela de Precios</a> · lista de espera</li>
+      <li><a href="../02_masterclass/landing_masterclass_AMURAI_v1.1.html">Masterclass de Precios</a></li>
+      <li><a href="../03_taller_presencial/landing_taller_presencial_AMURAI_v1.2.html">Taller presencial · Tu Sistema de Precios</a></li>
+      <li><a href="../01_incompany/landing_incompany_AMURAI_v2.1.html">Taller in-company</a></li>
+      <li><a href="../04_auditoria/landing_auditoria_precios_AMURAI_v1.0.html">Auditoría de precios</a></li>
+    </ul>
+    <p class="rv" style="margin-top:16px"><a href="../../web/servicios_amurai_es_v1.0.html">Ver la escalera completa</a></p>
+  </div>
+</section>
+</main>
 <footer>
   <div class="wrap">
-    <a href="#top" class="logo" style="justify-content:center;margin-bottom:6px" aria-label="Amurai"><img src="../_assets/amurai-logo-gold.png" alt="Amurai" style="height:34px"></a>
+    <a href="#top" class="logo" style="justify-content:center;margin-bottom:6px" aria-label="Amurai"><img src="../_assets/amurai-logo-gold.png" alt="Amurai" style="height:34px" width="488" height="130"></a>
     <p class="tag">Nunca caminarás solo.</p>
     <p>www.amurai.es · <a href="mailto:antonio.molina@amurai.es">antonio.molina@amurai.es</a></p>
 <nav class="legal-nav" aria-label="Legal"><a href="../09_legal/aviso-legal_AMURAI_v1.0.html">Aviso legal</a><a href="../09_legal/politica-privacidad_AMURAI_v1.0.html">Política de privacidad</a><a href="../09_legal/politica-cookies_AMURAI_v1.0.html">Política de cookies</a><a href="../09_legal/condiciones-contratacion_AMURAI_v1.0.html">Condiciones de contratación</a><a href="../09_legal/desistimiento_AMURAI_v1.0.html">Desistimiento</a><a href="#configurar-cookies">Configurar cookies</a></nav>
