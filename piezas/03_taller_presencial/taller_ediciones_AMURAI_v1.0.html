@@ -7,7 +7,7 @@
     · EDICIONES vacío         → estado «sin ediciones abiertas».
   En los dos estados la LISTA DE ESPERA POR CIUDAD está disponible (#lista): entra en el Club Amurai,
   etiqueta taller-presencial-lista-espera + campo ciudad (D-084). Sin integración ni pago (D-070).
-  La agencia mantiene el listado EDICIONES y el LISTADO DE CIUDADES (lo da JR; hoy solo Granada, Almería y «otra»).
+  La agencia mantiene el listado EDICIONES. El LISTADO DE CIUDADES quedó cerrado por JR el 2026-09-16 (D-128): 23 ciudades más «Otra ciudad».
   Especificación: ESPECIFICACION_taller_ediciones.md.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
@@ -169,9 +169,30 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
       <label class="f" for="ciudad">Ciudad en la que te interesa el taller</label>
       <select id="ciudad" name="ciudad" required>
         <option value="" selected disabled>Elige una ciudad</option>
-        <!-- LISTADO DE CIUDADES: lo da JR (D-084). Hoy solo las dos con evento documentado. -->
-        <option value="Granada">Granada</option>
+        <!-- LISTADO DE CIUDADES: cerrado por JR el 2026-09-16 (D-128). 23 ciudades, por orden alfabético, más «Otra ciudad». -->
+        <option value="A Coruña">A Coruña</option>
+        <option value="Alicante/Alacant">Alicante/Alacant</option>
         <option value="Almería">Almería</option>
+        <option value="Badajoz">Badajoz</option>
+        <option value="Barcelona">Barcelona</option>
+        <option value="Bilbao">Bilbao</option>
+        <option value="Cáceres">Cáceres</option>
+        <option value="Cádiz">Cádiz</option>
+        <option value="Córdoba">Córdoba</option>
+        <option value="Granada">Granada</option>
+        <option value="Huelva">Huelva</option>
+        <option value="Jaén">Jaén</option>
+        <option value="Las Palmas de Gran Canaria">Las Palmas de Gran Canaria</option>
+        <option value="Madrid">Madrid</option>
+        <option value="Málaga">Málaga</option>
+        <option value="Murcia">Murcia</option>
+        <option value="Palma">Palma</option>
+        <option value="Pamplona/Iruña">Pamplona/Iruña</option>
+        <option value="Santa Cruz de Tenerife">Santa Cruz de Tenerife</option>
+        <option value="Santander">Santander</option>
+        <option value="Sevilla">Sevilla</option>
+        <option value="Valencia/València">Valencia/València</option>
+        <option value="Zaragoza">Zaragoza</option>
         <option value="otra">Otra ciudad</option>
       </select>
       <input type="text" id="ciudad-otra" name="ciudad_otra" placeholder="¿Cuál?" aria-label="Otra ciudad" hidden>
