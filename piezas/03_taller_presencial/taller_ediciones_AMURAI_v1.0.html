@@ -7,7 +7,7 @@
     · EDICIONES vacío         → estado «sin ediciones abiertas».
   En los dos estados la LISTA DE ESPERA POR CIUDAD está disponible (#lista): entra en el Club Amurai,
   etiqueta taller-presencial-lista-espera + campo ciudad (D-084). Sin integración ni pago (D-070).
-  La agencia mantiene el listado EDICIONES. El LISTADO DE CIUDADES quedó cerrado por JR el 2026-09-16 (D-128): 23 ciudades más «Otra ciudad».
+  La agencia mantiene el listado EDICIONES. El LISTADO DE CIUDADES quedó cerrado por JR el 2026-09-16 (D-128): 23 ciudades. Sin «Otra ciudad» ni texto libre (D-130).
   Especificación: ESPECIFICACION_taller_ediciones.md.
   PASO 9 (E40, 2026-09-02): correcciones de capa A aplicadas por paso9_correcciones.py (ver E40). Copia previa en _archivo/pre-paso9_2026-09-02/.
   PASO 9b (GATE D, 2026-09-02): capa 1 plegada (la información básica se despliega; las casillas siguen visibles y obligatorias).
@@ -19,8 +19,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Próximas ediciones · Taller Tu Sistema de Precios · Amurai</title>
 <link rel="canonical" href="https://amurai.es/taller-tu-sistema-de-precios/ediciones/">
-<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/taller-tu-sistema-de-precios/ediciones/"><meta property="og:title" content="Próximas ediciones · Taller Tu Sistema de Precios · Amurai"><meta property="og:description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Tu ciudad no está? Apúntate a la lista de espera."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
-<meta name="description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Tu ciudad no está? Apúntate a la lista de espera.">
+<meta property="og:type" content="website"><meta property="og:url" content="https://amurai.es/taller-tu-sistema-de-precios/ediciones/"><meta property="og:title" content="Próximas ediciones · Taller Tu Sistema de Precios · Amurai"><meta property="og:description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Quieres el taller en tu ciudad? Apúntate a la lista de espera."><meta property="og:image" content="https://amurai.es/assets/og-amurai.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="AMURAI"><meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Ediciones abiertas del taller presencial Tu Sistema de Precios: ciudad, fecha, lugar y plazas. ¿Quieres el taller en tu ciudad? Apúntate a la lista de espera.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -157,7 +157,7 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
     </div>
 
     <!-- ===== LISTA DE ESPERA POR CIUDAD · siempre disponible (D-083, D-084) ===== -->
-    <h2 id="lista">¿Tu ciudad no está? Apúntate a la lista de espera.</h2>
+    <h2 id="lista">¿Quieres el taller en tu ciudad? Apúntate a la lista de espera.</h2>
     <p class="lead">Elige la ciudad que te interesa. Te avisamos cuando abramos una edición allí o en una cercana.</p>
 
     <form id="lista-espera" action="#" method="post" novalidate>
@@ -169,7 +169,7 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
       <label class="f" for="ciudad">Ciudad en la que te interesa el taller</label>
       <select id="ciudad" name="ciudad" required>
         <option value="" selected disabled>Elige una ciudad</option>
-        <!-- LISTADO DE CIUDADES: cerrado por JR el 2026-09-16 (D-128). 23 ciudades, por orden alfabético, más «Otra ciudad». -->
+        <!-- LISTADO DE CIUDADES: cerrado por JR el 2026-09-16 (D-128 y D-130). 23 ciudades, por orden alfabético. Lista cerrada: no hay «Otra ciudad» ni campo libre. Para añadir una, se añade aquí. -->
         <option value="A Coruña">A Coruña</option>
         <option value="Alicante/Alacant">Alicante/Alacant</option>
         <option value="Almería">Almería</option>
@@ -193,9 +193,7 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
         <option value="Sevilla">Sevilla</option>
         <option value="Valencia/València">Valencia/València</option>
         <option value="Zaragoza">Zaragoza</option>
-        <option value="otra">Otra ciudad</option>
       </select>
-      <input type="text" id="ciudad-otra" name="ciudad_otra" placeholder="¿Cuál?" aria-label="Otra ciudad" hidden>
       <div class="aviso">
         Una cosa antes del botón, para que no haya sorpresas: <b>al apuntarte entras también en el CLUB AMURAI</b>. Cada día te llega una lección sobre PRECIOS, MÁRGENES y BENEFICIOS… y es posible que alguna vez te venda algo. Si ya estás en el Club, no te duplico: solo apunto tu ciudad y que quieres el taller.
       </div>
@@ -259,8 +257,6 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
     });
   })();
   // «Otra ciudad» → campo libre
-  var sel = document.getElementById('ciudad'), otra = document.getElementById('ciudad-otra');
-  sel.addEventListener('change', function(){ otra.hidden = sel.value !== 'otra'; if (!otra.hidden) otra.required = true; else otra.required = false; });
   // Consentimiento obligatorio (D-076)
   // SIN INTEGRACIÓN (D-070): solo se muestra la confirmación.
   document.getElementById('lista-espera').addEventListener('submit', function(e){
