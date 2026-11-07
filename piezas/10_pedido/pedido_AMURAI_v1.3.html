@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <!--
   AMURAI · PIEZA 10 · PEDIDO · pedido_AMURAI_v1.2
+  v1.3 (S-123, 2026-10-26; D-291, D-292): Madrid a 167 € de lanzamiento hasta el 10-nov y 197 € desde el 11, impuestos incluidos (bases 138,02 y 162,81 €), y de 17:00 a 21:00, como los enlaces de Stripe creados por JR y como lo que CMYK ya publicó el 26-oct. Solo cambian cifras, horario, enlace A en el pedido y los enlaces entre piezas.
+  --- versión anterior ---
   v1.2 (S-111, 2026-10-15): el taller declara su total, impuestos incluidos (190 €; Madrid 137 € hasta el 10-nov), como la masterclass (D-113); la base se deduce. La nota bajo el importe dice que el precio incluye el IVA cuando el producto declara total. Vuelta a ediciones v1.2.
   --- v1.1 ---
   v1.1 (S-111, 2026-10-15; D-261 a D-266): el taller pasa a 190 € base (precio final, D-262), cuatro horas y 30 plazas (D-263, D-264);
@@ -211,17 +213,17 @@ header img[src*="amurai-logo"],footer img[src*="amurai-logo"],.logo img{width:au
       base: null, digital: false, volver: '../02_masterclass/masterclass_directo_AMURAI_v1.0.html', enlace: '' },
     taller: { nombre: 'Taller presencial · Tu Sistema de Precios', incluye: 'Cuatro horas en sala · máximo 30 personas · herramientas del sistema · un mes de soporte por email.',
       entrega: 'Tu plaza queda reservada en la edición elegida. Te llegan por correo el recibo y los datos prácticos: lugar, hora y qué traer. El soporte posterior, durante un mes, se atiende por correo.',
-      base: 157.02, total: 190, digital: false, volver: '../03_taller_presencial/taller_ediciones_AMURAI_v1.2.html', enlace: '' }
+      base: 162.81, total: 197, digital: false, volver: '../03_taller_presencial/taller_ediciones_AMURAI_v1.3.html', enlace: '' }
   };
   // EDICIONES del taller (mismo listado que taller_ediciones): clave = parámetro edicion
   // Cada edición: texto que se muestra, 'incluye' y 'base' propios (D-262: el precio es por edición), 'nota' (línea bajo el importe, opcional)
   // y, si esa edición tiene su propio enlace de pago, 'enlace' (si no, se usa PRODUCTOS.taller.enlace).
-  // Madrid: total 137 € (impuestos incluidos) del 26-oct al 10-nov; desde el 11-nov se pone total: 190 (base 157.02) y se quita la nota.
+  // Madrid: total 167 € (impuestos incluidos) del 26-oct al 10-nov; desde el 11-nov se pone total: 197 (base 162.81), el enlace pasa al B (https://buy.stripe.com/00waEWbyc3VU8nm0XN9IQ0b) y se quita la nota.
   // Barcelona (22-oct-2026) no pasa por esta página: la página de ediciones enlaza directamente a la página que cobra, en nevadaamurai.com (D-261).
   var EDICIONES = {
-    'madrid-2026-11-26': { texto: 'Madrid · jueves 26 de noviembre de 2026 · 16:30 a 20:30 h · Hotel Elba Madrid Alcalá, calle de Alcalá 476',
+    'madrid-2026-11-26': { texto: 'Madrid · jueves 26 de noviembre de 2026 · 17:00 a 21:00 h · Hotel Elba Madrid Alcalá, calle de Alcalá 476',
       incluye: 'Cuatro horas en sala · máximo 30 personas · herramientas del sistema · un mes de soporte por email.',
-      base: 113.22, total: 137, nota: 'Precio de lanzamiento de esta edición hasta el 10 de noviembre. Desde el 11, 190 €, impuestos incluidos.', enlace: '' }
+      base: 138.02, total: 167, nota: 'Precio de lanzamiento de esta edición hasta el 10 de noviembre. Desde el 11, 197 €, impuestos incluidos.', enlace: 'https://buy.stripe.com/5kQ28q1XC0JI1YY21R9IQ0a' }
   };
 
   var q = new URLSearchParams(location.search), key = q.get('producto') || document.body.getAttribute('data-producto') || 'masterclass', p = PRODUCTOS[key] || PRODUCTOS.masterclass;
